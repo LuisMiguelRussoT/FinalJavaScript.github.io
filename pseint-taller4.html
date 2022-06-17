@@ -1,0 +1,429 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/codigo.js"></script>
+
+
+</head>
+
+<body>
+    <div class="morado">
+        <h1>PSEINT - TALLER # 4  Taller de Arreglos</h1>
+        <p>A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que
+            serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil
+            Estricto.</p>
+        <button class="regresar" onclick="window.location.href='index.html';">
+            <b>Volver</b>
+        </button>
+    </div>
+    <!--PUNTO NUMERO UNO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 1 </h3>
+
+        <button class="naranja" onclick=esconder(0)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Crear un vector de tipo Entero con 5 posiciones, llenarlo con información solicitada al usuario. Después de
+            recoger toda la información, se requiere imprimir el índice de cada posición en el arreglo con su valor de
+            la siguiente manera:
+            <pre>
+             [0] = 55  
+             [1] = 99 
+             [2] = 11 
+             [3] = 56 
+             [4] = 69               
+             </pre>
+
+        </div>
+
+        <button class="naranja" onclick=esconder(1)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+            Proceso ArreglosUno
+	
+                Definir indice como entero;
+                Definir informacion como entero;
+                Dimension informacion[5];
+            
+                para indice<-0 hasta 4 con paso 1 hacer
+                Escribir "Ingresa el valor de la poscicion ",indice+1; sin saltar 
+                leer informacion[indice];
+                FinPara
+            
+                Limpiar Pantalla;
+                para indice<-0 hasta 4 con paso 1 hacer
+                    Escribir "[",indice,"]"," = ",informacion[indice];
+                FinPara
+                
+            FinProceso
+            
+
+            </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO DOS -->
+    <div class="aguamarina">
+        <h3>PUNTO # 2</h3>
+
+        <button class="naranja" onclick=esconder(2)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Crear un arreglo de números enteros de 20 posiciones, el cual, debe ser llenado con números aleatorios entre
+            1 y 100; después de haber llenado dicho arreglo, se debe volver a recorrer utilizando un ciclo diferente al
+            que se usó para llenarse e imprimir los números pares e impares. Ejemplo
+            <pre>
+              Números pares: 2,4,6,8,10 
+              Números impares: 1,3,5,7,9     
+            </pre>
+        </div>
+
+        <button class="naranja" onclick=esconder(3)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+     Proceso ArreglosDos
+                Definir i como entero;
+                definir residuo como entero;
+                Definir arreglo como real;
+                Dimension arreglo[20];
+
+                para i <- 0 hasta 19 con paso 1 Hacer
+                    arreglo[i] <- Aleatorio(1,100);
+                    Escribir "El numero de la posicion ", i+1," :",arreglo[i];
+                    
+                FinPara
+                Escribir "";
+                i<- 0;
+                Escribir "Números pares: ";sin saltar
+                Mientras i<>19 Hacer
+                    residuo<- arreglo[i] % 2 ;
+                    si residuo = 0 y i>0 Entonces
+                        Escribir ",",arreglo[i];sin saltar
+                    FinSi
+                    si i=0 entonces
+                        Escribir,arreglo[i];sin saltar
+                    FinSi
+                    i<- i+1;
+                FinMientras
+                Escribir "";
+
+                i<- 0;
+                Escribir "Números impares: ";sin saltar
+                Repetir
+                    residuo<- arreglo[i] % 2 ;
+                    si residuo = 1 y i<19 Entonces
+                        Escribir arreglo[i],",";sin saltar
+                    FinSi
+                    si i=19 Entonces
+                        Escribir arreglo[i];
+                    FinSi
+                    i<- i+1;
+                Hasta Que i = 20
+                Escribir "";
+     FinProceso
+          
+            
+        </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO TRES -->
+    <div class="aguamarina">
+        <h3>PUNTO # 3</h3>
+
+        <button class="naranja" onclick=esconder(4)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Imprimir los números primos del 1 al 1000, el resultado debe ser buscado de forma matemática.
+
+        </div>
+
+        <button class="naranja" onclick=esconder(5)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+         Proceso ArreglosTres
+                Definir i,j como entero;
+                Definir resultado como real;
+                Definir contador como real;
+                
+                contador<- 0;
+                
+                para i<-2 hasta 1000 con paso 1 Hacer
+                    
+                    para j<-1 hasta i con paso 1 Hacer
+                        resultado<- i%j;
+                        si resultado =0.0 entonces
+                            contador<- contador + 1;
+                        FinSi
+                    FinPara
+                    si contador<=2 entonces
+                        Escribir i,"-"; sin saltar
+                    FinSi
+                    contador <- 0;
+                FinPara
+        FinProceso
+            
+
+         </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO CUATRO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 4</h3>
+
+        <button class="naranja" onclick=esconder(6)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+
+            Dada la siguiente matriz bidimensional, el cual debe de quemar en el código
+            <pre>
+               01 02 03 04 05
+               06 07 08 09 10
+               11 12 13 14 15
+               16 17 18 19 20  
+               
+               Utilizando el conocimiento adquirido, a excepción de hacerlo de forma manual, imprima la siguiente matriz bidimensional.
+                
+               01 02 03 04 05
+               10 09 08 07 06
+               11 12 13 14 15
+               20 19 18 17 16
+            
+            </pre>
+        </div>
+
+
+        <button class="naranja" onclick=esconder(7)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+    Proceso arreglosCuatro
+                        
+                        
+                        Definir fila, columna, contador como entero;
+                        Definir  matriz como entero;
+                        Dimension matriz[4,5];
+                        contador <- 1;
+                        
+                        Escribir "-----------------MATRIZ INICIAL-----------------";
+                        Repetir
+                            para fila<-0 hasta 3 con paso 1 Hacer
+                                
+                                Escribir "";
+                                para columna<-0 hasta 4 con paso 1 Hacer
+                                    matriz[fila,columna] <- contador;
+                                    si contador<=9 Entonces
+                                        Escribir 0,matriz[fila,columna]," ";sin saltar	
+                                    sino
+                                    Escribir matriz[fila,columna]," ";sin saltar
+                                FinSi
+                                contador <- contador + 1;
+                                FinPara
+                            FinPara
+                        Hasta Que contador >= 20
+                        contador <- 1;
+                        Escribir "";
+                        Escribir "-----------------MATRIZ CON CAMBIO-----------------";
+                        Repetir
+                            Para fila<-0 hasta 3 con paso 1 Hacer
+                                si fila = 0 o fila = 2 Entonces
+                                                Escribir "";
+                                    para columna<-0 hasta 4 con paso 1 Hacer
+                                        si contador<=9 Entonces
+                                            Escribir 0,matriz[fila,columna]," ";sin saltar	
+                                        sino
+                                            Escribir matriz[fila,columna]," ";sin saltar
+                                        FinSi
+                                        contador <- contador + 1;
+                                    
+                                    FinPara
+                                    Escribir "";
+                                FinSi
+                                
+                                si fila = 1 o fila = 3 Entonces
+                                    para columna<-4 hasta 0 con paso -1 Hacer
+                                        si matriz[fila,columna]<=9 Entonces
+                                            Escribir 0,matriz[fila,columna]," ";sin saltar	
+                                        sino
+                                            Escribir matriz[fila,columna]," ";sin saltar
+                                        FinSi
+                                        contador <- contador + 1;					
+                                    FinPara
+                                FinSi
+                                    
+                            FinPara
+                        Hasta Que contador >= 20
+                        Escribir " ";
+    FinProceso
+
+                
+
+     </pre>
+
+        </div>
+        <button class="naranja" onclick=esconder(8)>
+            <h3>VIDEO</h3>
+        </button>
+
+        <div class="enunciado">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/O9pF8msv0MQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO CINCO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 5</h3>
+
+        <button class="naranja" onclick=esconder(9)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Se debe de imprimir el siguiente cuadro <br><br>
+            <img src="./img/CuadroTallerArreglos.png">
+            <br><br> El usuario deberá insertar la fila y columna de la cual desea ver el resultado, el resultado de
+            cada celda debe estar previamente calculado en una matriz bidimensional la cual cada resultado obedecerá a
+            la fila y columna insertada por el usuario.
+            <pre>
+
+            </pre>
+        </div>
+
+        <button class="naranja" onclick=esconder(10)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+    
+                Proceso arreglosCinco
+	
+	
+                Definir fila como entero;
+                Definir repetidor como cadena;
+                Definir contador como entero;
+                Definir columna como entero;
+                Definir tabla como entero;
+                Dimension tabla[10,10];
+                
+                repetidor <- "";
+                mientras repetidor = "" hacer
+                    
+                
+                Escribir "Seleccione la Fila y Columna que desea operar";
+                Escribir "";
+                para contador <- 0 hasta 9 con paso 1 Hacer
+                    Escribir "    ",contador,"   ";sin saltar
+                FinPara
+                contador<-0;
+                Escribir "";
+                Escribir "--------------------------------------------------------------------------------";
+                para fila<-0 hasta 9 con paso 1 hacer
+                    Escribir ,contador,"."; sin saltar
+                    contador <- contador +1;
+                    para columna<-0 hasta 9 con paso 1 hacer 
+                        
+                        Escribir "|";Sin Saltar
+                        si columna<9 y fila<9 Entonces
+                            Escribir "0",columna + 1 ,"x","0", fila+1," ";sin saltar
+                            Escribir "|";Sin Saltar
+                        FinSi
+                        
+                        si fila=9 y columna<9 Entonces
+                            Escribir "0",columna + 1 ,"x",fila+1," ";sin saltar
+                            Escribir "|";Sin Saltar
+                        FinSi
+                        
+                        si fila<9 y columna=9 Entonces
+                            Escribir columna + 1 ,"x","0",fila+1," ";sin saltar
+                            Escribir "|";Sin Saltar
+                        FinSi
+                        
+                        si fila=9 y columna=9 Entonces
+                            Escribir columna + 1 ,"x",fila+1," ";sin saltar
+                            Escribir "|";Sin Saltar
+                        FinSi
+                        
+                        tabla[fila,columna]<- (fila+1)*(columna+1);												
+                    FinPara
+                    Escribir "";
+                FinPara
+                Escribir "--------------------------------------------------------------------------------";
+                
+                
+                Escribir "";
+                Escribir "Fila :";sin saltar
+                leer fila;
+                
+                Escribir "";
+                Escribir "Columna :";sin saltar
+                leer columna;
+                
+                
+                Escribir "";
+                Escribir "El resultado para ese poscicion es: ";sin saltar
+                Escribir tabla[fila,columna];
+                
+                Escribir "Presione enter para reinicar";
+                leer repetidor;
+                Limpiar Pantalla;
+                
+            FinMientras
+            FinProceso
+            
+            </pre>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

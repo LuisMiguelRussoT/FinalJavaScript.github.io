@@ -1,0 +1,881 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/codigo.js"></script>
+
+
+</head>
+
+<body>
+    <div class="morado">
+        <h1>PSEINT - TALLER # 5 Taller de Funciones (Condicionales)</h1>
+        <p>A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que
+            serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil
+            Estricto.</p>
+        <button class="regresar" onclick="window.location.href='index.html';">
+            <b>Volver</b>
+        </button>
+    </div>
+    <!--PUNTO (FUNCIONES) NUMERO UNO -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 1 </h3>
+
+        <button class="naranja" onclick=esconder(0)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18
+            años, deberá mostrar en pantalla: Usted es mayor de edad.
+        </div>
+
+        <button class="naranja" onclick=esconder(1)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                    SubProceso verificador_edad ( age )
+                    si (age >= 18) entonces;
+                        Escribir  "usted es mayor de edad";
+                    FinSi
+                FinSubProceso
+                
+                Proceso condicionalesUno
+                    
+                    Definir edad como entero;
+                    
+                    Escribir "cual es tu edad?";
+                    leer edad;
+                    
+                    verificador_edad(edad);
+                    
+                FinProceso
+            
+    
+                </pre>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+    <!--PUNTO (FUNCIONES) NUMERO DOS -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 2</h3>
+
+        <button class="naranja" onclick=esconder(2)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años, deberá
+            mostrar en pantalla: Usted aún es un niño(a).
+        </div>
+
+        <button class="naranja" onclick=esconder(3)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                    SubProceso validar_menor_edad (age)
+                    si (age < 18) entonces;
+                        Escribir "Usted aún es un niño(a)";
+                    FinSi
+                FinSubProceso
+                
+                Proceso condicionalesDos
+                    Definir edad como entero;
+                    
+                    Escribir "cual es tu edad?";
+                    leer edad;
+                    validar_menor_edad(edad);
+                    
+                FinProceso
+                
+            </pre>
+        </div>
+
+    </div>
+    <!--PUNTO (FUNCIONES) NUMERO TRES -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 3</h3>
+
+        <button class="naranja" onclick=esconder(4)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es
+            mayor o igual a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de edad,
+            por lo tanto puede entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces, deberá
+            imprimirse el siguiente mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no puede entrar a
+            la fiesta, por favor devuélvase a su casa. </div>
+
+        <button class="naranja" onclick=esconder(5)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                    SubProceso controlFiesta (name,lastName,age)
+                    si (age >= 18) entonces;
+                        Escribir name, "", lastName," ", "usted es mayor de edad, por lo tanto puede entrar a la fiesta";
+                    SiNo
+                        Escribir name, "", lastName," ", "usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.";
+                    FinSi
+                FinSubProceso
+                
+                Proceso condicionalesTres
+                    Definir nombres como cadena	;
+                    Definir apellidos como cadena;
+                    Definir edad como entero;
+                        
+                    Escribir "Cuales son tus nombres?";
+                    leer nombres;
+                    
+                    Escribir "Cuales son tus apellidos?";
+                    leer apellidos; 
+                    
+                    Escribir "cual es tu edad?";
+                    leer edad;
+                    
+                    controlFiesta(nombres,apellidos,edad);
+                    
+                FinProceso
+                    
+                
+                   
+                
+    
+                </pre>
+        </div>
+
+    </div>
+    <!--PUNTO (FUNCIONES) NUMERO CUATRO -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 4</h3>
+
+        <button class="naranja" onclick=esconder(6)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir,
+            requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus usuarios.
+            Para cada usuario se debe permitir la opción de alquilar película, consultar películas disponibles y recibir
+            película en la video tienda con la opción de realizar anotaciones sobre estas si se llegan a presentar daños
+            u otra novedad sobre la película. </div>
+
+        <button class="naranja" onclick=esconder(7)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                    SubProceso alquilar()
+                    Definir seleccion como entero;
+                    
+                    Escribir "las peliculas disponibles son:";
+                    Escribir "";			
+                    Escribir "1. mohana";
+                    Escribir "2. lluvia de hamburguesas";
+                    Escribir "3. mi villano favorito";
+                    Escribir "4 jurasic park";
+                    Escribir "";	
+                    Escribir "Digita el numero de la que prefieres";
+                    
+                    leer seleccion;
+                    
+                    Escribir "";	
+                    Escribir "Disfruta tu pelicula";
+                    
+                FinSubProceso
+                
+                SubAlgoritmo recibir ()
+                    Definir seleccion como entero;
+                    Definir  novedad como cadena;
+                    
+                    
+                    Escribir "Hay alguna novedad que presentar?";
+                    Escribir "1. si";
+                    Escribir "2. no";
+                    
+                    leer seleccion;
+                    
+                    si (seleccion = 1) Entonces
+                        Escribir "Cual es la novedad?";
+                        leer novedad;
+                        Escribir "Información guardada";
+                    sino 
+                        Escribir "Información guardada";
+                    FinSi
+                    
+                FinSubAlgoritmo
+                
+                
+                Proceso condicionalesCuatro
+                    
+                    Definir opcion como entero;
+                
+                    
+                    Escribir "Que proceso deseas realizar?";
+                    Escribir "1. Alquilar peliculas";
+                    Escribir "2. Recibir una pelicula";
+                    
+                    leer opcion;
+                        
+                    segun opcion hacer
+                        1:
+                            alquilar();
+                        2: 
+                            recibir();
+                            
+                    FinSegun
+                    
+                FinProceso
+                
+                           
+    
+                </pre>
+
+        </div>
+        <button class="naranja" onclick=esconder(8)>
+            <h3>VIDEO</h3>
+        </button>
+
+        <div class="enunciado">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/s7c7DQxs8Hk"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+    </div>
+    <!--PUNTO (FUNCIONES) NUMERO CINCO -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 5</h3>
+
+        <button class="naranja" onclick=esconder(9)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder
+            facturar los productos que vende a sus clientes y para ello, los productos tienen unas características que
+            deben indicársele al cliente para que pueda escoger el producto a comprar. Para cada cliente, se tienen las
+            opciones de compra de producto, consulta de precios por producto y devoluciones en caso de que se presenten.
+        </div>
+
+        <button class="naranja" onclick=esconder(10)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+SubProceso seleccionCompra ()
+	definir Seleccion Como entero;
+	leer seleccion;
+	
+	Escribir "Puedes pasar a ventanilla por tus productos";
+FinSubProceso
+
+SubProceso seleccionDevolucion ()
+	definir Seleccion Como entero;
+	leer seleccion;
+		
+	si (seleccion >= 1 & seleccion <=4) entonces;
+		Escribir "Por Favor dirigite a la Ventanilla de devoluciones para asistirte con el proceso";
+	finsi
+	
+FinSubProceso
+
+SubAlgoritmo menuInicial()
+	Escribir "Las presentaciones disponibles son:";
+	Escribir "";
+FinSubAlgoritmo
+
+
+Proceso condicionalesCinco
+	
+	Definir opcion como entero;
+	Definir seleccion como entero;
+	Definir  novedad como cadena;
+	
+	Escribir "Bienvenido(a) en que te podemos asistir?";
+	Escribir "1. Comprar";
+	Escribir "2. Devoluciones";
+	
+	leer opcion;
+		
+	segun opcion hacer
+		1:
+			Escribir "Nuestros productos disponibles son";
+			Escribir "";			
+			Escribir "1. Dulcolax";
+			Escribir "2. Buscapina Fem";
+			Escribir "3. Loratadina";
+			Escribir "4. Helado";
+			Escribir "";	
+			Escribir "Cual deseas adquirir";
+			
+			leer seleccion;
+			
+			segun seleccion hacer
+			1:
+				menuInicial;
+				Escribir "1. Tableta individual...$500";
+				Escribir "2. Tableta x 10.... $4500";
+				Escribir "";
+				Escribir "Cual deseas?";
+				
+				
+				
+			2: 
+				menuInicial;
+				Escribir "1. Tableta individual...$800";
+				Escribir "2. Tableta x 6.... $4000";
+				Escribir "";
+				Escribir "Cual deseas?";
+				
+				seleccionCompra();
+				
+			3:
+				menuInicial;
+				Escribir "1. Tableta individual...$600";
+				Escribir "2. Tableta x 8.... $3500";
+				Escribir "";
+				Escribir "Cual deseas?";
+				
+				seleccionCompra();
+				
+			4:
+				menuInicial;
+				Escribir "1. helado de chocolate.... $2000";
+				Escribir "2. helado de fresa...... $2200";
+				Escribir "";
+				Escribir "Cual deseas?";
+				
+				seleccionCompra();
+		FinSegun
+				
+			
+			
+		2: 
+			Escribir "Selecciona el producto deseas devolver?";
+			Escribir "";			
+			Escribir "1. Dulcolax";
+			Escribir "2. Buscapina Fem";
+			Escribir "3. Loratadina";
+			Escribir "4. Helado";
+			Escribir "";
+			
+			seleccionDevolucion();
+			
+	FinSegun
+	
+FinProceso
+
+    
+                </pre>
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <!--PUNTO (FUNCIONES) NUMERO SEIS -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 6</h3>
+
+        <button class="naranja" onclick=esconder(11)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas
+            revisiones y requiere una aplicación que le permita registrar los servicios generados a sus clientes. Para
+            cada motocicleta se debe tener registro del ingreso al taller y las observaciones por parte del cliente.
+            También debe existir registro de salida del taller con las novedades y otra de arreglos hechos por el
+            mecánico en caso de que se requiera inventariar cambios repuestos en la motocicleta al entregarla.
+        </div>
+
+        <button class="naranja" onclick=esconder(12)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                    SubProceso entrada()
+	
+	definir fecha,marca,cilindraje,confirmacion como cadena;
+	
+	Escribir "Fecha de ingreso";
+	leer fecha;
+	Escribir "";
+	
+	Escribir "Cual es la marca del vehiculo?";
+	leer marca;
+	Escribir "";	
+	
+	Escribir "Cual es el cilidraje del vehiculo?";
+	leer cilindraje;
+	Escribir "";	
+	
+	Escribir "El cliente tiene alguna observacion";
+	leer confirmacion;
+	si (confirmacion = "si") Entonces
+		Escribir "escriba a continuacion las obsersaciones del cliente:";
+		leer observacionesCliente;
+		Escribir "El vehiculo de marca ",marca, " con cilidraje ",cilindraje," fue recibido el dia ",fecha," , el cliente aporto la siguiente observacion (",observacionesCliente,")";
+	sino
+		Escribir "El vehiculo de marca ",marca, "con cilidraje ",cilindraje," fue recibido el dia ",fecha;
+		
+	FinSi
+FinSubProceso
+
+SubProceso salida()
+	
+	Definir opcion como entero;
+	Definir marca como cadena;
+	Definir cilindraje como entero;
+	Definir fecha como cadena;
+	Definir confirmacion como cadena;
+	Definir observacionesCliente como cadena;
+	Definir observacionesMecanico como cadena;
+	
+	Escribir "Fecha de Salida";
+	leer fecha;
+	Escribir "";
+	
+	Escribir "Cual es la marca del vehiculo?";
+	leer marca;
+	Escribir "";	
+	
+	Escribir "Cual es el cilidraje del vehiculo?";
+	leer cilindraje;
+	Escribir "";	
+	
+	Escribir "Novedades del trabajo";
+	leer observacionesMecanico;
+	
+	Escribir "El vehiculo de marca ",marca, " con cilidraje ",cilindraje," fue entregado al cliente el dia ",fecha," , Novedades del tecnico (",observacionesMecanico,")";
+	
+FinSubProceso
+
+Proceso condicionalesSeis
+	
+	Definir opcion como entero;
+	
+		Escribir "El Vehiculo es para ingreso o salida";
+		Escribir "1. Ingreso";
+		Escribir "2. Salida";
+		
+		leer opcion;
+		
+		segun opcion hacer
+			1:
+				
+				entrada;
+				
+			2: 
+				salida;
+				
+			FinSegun
+	FinProceso
+
+                </pre>
+        </div>
+
+    </div>
+    <!--PUNTO (FUNCIONES) NUMERO SIETE -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 7</h3>
+
+        <button class="naranja" onclick=esconder(13)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de masa
+            corporal) y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada
+            adicional a los datos suministrados, debe mostrar el resultado para cada uno y establecer en qué rango se
+            encuentra (bajo peso, normal, sobrepeso y obeso).
+        </div>
+        <button class="naranja" onclick=esconder(14)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                    SubProceso resultado<- calcularIcm (numero1,numero2)
+                    definir resultado como real;
+                    icm<- numero1/(numero2)^2;
+                FinSubProceso
+                
+                Proceso condicionalesSiete
+                    
+                    definir peso Como entero;
+                    definir estatura como real;
+                    definir icm como real;
+                    
+                    Escribir "Cual es su peso?";
+                    leer peso;
+                    Escribir "Cual es su estatura?";
+                    leer estatura;
+                    
+                    icm <- calcularIcm (peso,estatura);
+                    
+                    
+                    Escribir icm;
+                        si icm < 18 Entonces
+                            Escribir "Se encuentra en un peso en el rango de Delgadez";
+                        FinSi
+                        
+                        si icm >= 18 y icm <= 24.99 Entonces
+                            Escribir "Se encuentra en un peso en el rango Normal";	
+                        FinSi
+                        
+                        si icm >= 25 y icm <= 29.99 Entonces
+                            Escribir "Se encuentra en un peso en el rango de Sobrepeso";		
+                        FinSi
+                        
+                        si icm > 30  Entonces
+                            Escribir "Se encuentra en un peso en el rango de Obesidad";		
+                        FinSi
+                            
+                        
+                    
+                
+                FinProceso
+                                    
+                </pre>
+        </div>
+
+    </div>
+
+    <!--PUNTO (FUNCIONES) NUMERO OCHO -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 8</h3>
+
+        <button class="naranja" onclick=esconder(15)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita
+            registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas
+            características propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación
+            permita registrar los pedidos, las tortas disponibles y las ventas que se registren diariamente.
+        </div>
+        <button class="naranja" onclick=esconder(16)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                    SubProceso resultado <- sabores (apuntador)
+	Definir  resultado como cadena;
+	segun apuntador hacer
+		1:
+			resultado <- "Tres leches";
+		2:
+			resultado <- "Chocolate";
+		3:  
+			resultado <- "Fresa";
+	FinSegun
+FinSubProceso
+
+SubProceso resultado <- tamano (apuntador)
+	Definir  resultado como entero;
+	segun apuntador hacer
+		1:
+			resultado <- 8;
+		2:
+			resultado <- 16;
+		3:  
+			resultado <- 24;
+	FinSegun
+FinSubProceso
+
+SubProceso resultado <- deco(apuntador)
+	Definir  resultado como cadena;
+	segun apuntador hacer
+		1:
+			resultado <- "Cumpleaños";
+		2:
+			resultado <- "Grado";
+		3:  
+			resultado<- "Matrimonio";
+	FinSegun
+FinSubProceso
+
+
+Proceso condicionalesOcho
+	
+	definir sabor como entero;
+	definir porciones como entero;
+	definir decoraciones como entero;
+	definir SeleccionSabor como cadena;
+	definir SeleccionPorciones como entero;
+	definir SeleccionDecoraciones como cadena;
+	
+	
+	Escribir" saber de preferencia de la torta";
+	Escribir "";
+	Escribir "1. Tres leches";
+	Escribir "2. Chocolate";
+	Escribir "3. Fresa";
+	leer sabor;
+	
+	Escribir "De cuantas porciones la requiere?";
+	Escribir "";
+	Escribir "1. 8 porciones";
+	Escribir "2. 16 porciones";
+	Escribir "3. 24 porciones";
+	leer porciones;
+	
+	Escribir "Tipo de decoracion:";
+	Escribir "";
+	Escribir "1. Cumpleaños:";
+	Escribir "2. Grado";
+	Escribir "3. Matrimonio";
+	leer decoraciones;
+	
+	SeleccionSabor <- sabores(sabor);
+	SeleccionPorciones <- tamano (porciones);
+	SeleccionDecoraciones <- deco(decoraciones);
+	
+	Escribir "Su pedido ha sido guardado exitosamente";
+	Escribir "";
+	Escribir "Una torta sabor ", SeleccionSabor," de ",SeleccionPorciones," porciones "," decorada para ", SeleccionDecoraciones;
+	
+FinProceso
+
+                    
+                </pre>
+        </div>
+
+    </div>
+
+    <!--PUNTO (FUNCIONES) NUMERO NUEVE -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 9</h3>
+
+        <button class="naranja" onclick=esconder(17)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de diferentes
+            figuras geométricas, para ello requiere una aplicación que le facilite el ejercicio solicitándole los
+            valores al estudiante. La aplicación debe permitir que el estudiante seleccione si desea calcular el área de
+            un rectángulo, triángulo o trapecio. No olvide solicitar los datos necesarios para realizar cada cálculo y
+            mostrar su respectivo resultado.
+        </div>
+        <button class="naranja" onclick=esconder(18)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                    SubProceso resultado <- areaTriangulo (numero1, numero2)
+                    definir resultado como entero;
+                        resultado <- (numero1 * numero2)/2;
+                FinSubProceso
+                
+                SubProceso resultado <- areaRectanculo (numero1, numero2)
+                    definir resultado como entero;
+                    resultado <- (numero1 * numero2);
+                FinSubProceso
+                
+                SubProceso resultado <- areaTrapecio (numero1, numero2,numero3)
+                    definir resultado como entero;
+                    resultado <- ((numero1 + numero2)/2)*numero3;;
+                FinSubProceso
+                
+                Proceso CondicionalesNueve
+                    
+                    definir altura como entero ;
+                    definir base como entero ;
+                    Definir baseMenor como entero; 
+                    Definir baseMayor como entero;
+                    Definir figura como entero;
+                    definir area como real;
+                    
+                    escribir "Sobre que figura vamos a trabajar";
+                    escribir "";
+                    escribir "1. Triangulo";
+                    escribir "2. Rectangulo";
+                    escribir "3. Trapecio";
+                    leer figura;
+                    
+                    segun figura hacer
+                        1: 
+                            
+                            escribir "Cual es el valor de la base del triangulo";
+                            leer base;
+                            escribir "Cual es el valor de la altura del triangulo";
+                            leer altura;
+                            area <- areaTriangulo(base,altura);
+                            escribir "En ese caso el area del triangulo es: ", area;
+                            
+                        2:
+                            escribir "Cual es el valor de la base del rectangulo";
+                            leer base;
+                            escribir "Cual es el valor de la altura del rectangulo";
+                            leer altura;
+                            escribir "";
+                            area <- areaRectanculo(base,altura);
+                            escribir "En ese caso el area del triangulo es: ", area;
+                        3:
+                            escribir "Cual es el valor de la base menor del trapecio";
+                            leer baseMenor;
+                            escribir "";
+                            escribir "Cual es el valor de la base mayor del trapecio";
+                            leer baseMayor;
+                            escribir "";
+                            escribir "Cual es el valor de la altura del trapecio";
+                            leer altura;
+                            escribir "";
+                            area <- areaTrapecio(baseMenor,baseMayor,altura);
+                            escribir "En ese caso el area del trapecio es: ", area;
+                            
+                    FinSegun
+                    
+                    
+                FinProceso
+              
+                                               
+                </pre>
+        </div>
+
+    </div>
+
+    <!--PUNTO (FUNCIONES) NUMERO DIEZ -->
+    <div class="aguamarina">
+        <h3>PUNTO (FUNCIONES) # 10</h3>
+
+        <button class="naranja" onclick=esconder(19)>
+            <h3>ENUNCIADO</h3>
+        </button>
+        <div class="enunciado">
+            El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación para
+            llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y
+            cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los
+            ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser mayor al valor que
+            tiene en la cuenta.
+
+        </div>
+        <button class="naranja" onclick=esconder(20)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                    SubProceso ingreso (numero2)
+                    Escribir "Cuanto deseas ingresar";
+                    Definir montoingreso como entero;
+                    leer montoingreso;
+                    
+                    si montoingreso > 0 entonces;
+                        Escribir "el nuevo saldo de su cuenta es ", numero2 + montoingreso;
+                    SiNo
+                        Escribir "Lo sentimos, no se pueden realizar ingresos de valores negativos";
+                    FinSi
+                FinSubProceso
+                
+                SubProceso retiro (numero2)
+                    Definir monto como entero;
+                    Escribir "Cuanto deseas retirar";
+                    leer monto;
+                    
+                    si monto < numero2 entonces;
+                        Escribir "su nuevo saldo es ", numero2 - monto;
+                    SiNo
+                        Escribir "Fondos Insuficientes";
+                    FinSi
+                FinSubProceso
+                
+                Proceso condicionalesDiez
+                    
+                    Definir usuario como entero;
+                    Definir saldo como entero;
+                    Definir seleccion como entero;
+                    Definir monto como entero;	
+                    
+                    Escribir "A que usuario deseas acceder?";
+                    Escribir "";
+                    Escribir "1.Miguel Russo";
+                    Escribir "2.Natalia Acosta";
+                    Escribir "3.David Camero";
+                    
+                    leer usuario;
+                        
+                    segun usuario hacer
+                        1:
+                            saldo <- 1000000;
+                        2:
+                            saldo <- 2000000;
+                        3:	
+                            saldo <- 3000000;
+                
+                            
+                    FinSegun
+                        
+                    Escribir "";
+                    Escribir "1. Ingresos";
+                    Escribir "2. Retiro";
+                    Escribir "3. Consulta";
+                    
+                    leer seleccion;
+                    
+                    segun seleccion Hacer
+                        1:
+                            ingreso(saldo);
+                        2: 
+                            retiro(saldo);
+                        3:		
+                            Escribir "su saldo es ", saldo;
+                            
+                    FinSegun
+                            
+                                   
+                 FinProceso
+                      
+                          
+                </pre>
+        </div>
+
+    </div>
+</body>
+
+</html>

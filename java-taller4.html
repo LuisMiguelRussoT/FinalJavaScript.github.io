@@ -1,0 +1,549 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/codigo.js"></script>
+
+
+</head>
+
+<body>
+    <div class="morado">
+        <h1>JAVA - TALLER # 4 Taller de Arreglos</h1>
+        <p>A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que
+            serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil
+            Estricto.</p>
+        <button class="regresar" onclick="window.location.href='index.html';">
+            <b>Volver</b>
+        </button>
+    </div>
+    <!--PUNTO NUMERO UNO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 1 </h3>
+
+        <button class="naranja" onclick=esconder(0)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Crear un vector de tipo Entero con 5 posiciones, llenarlo con información solicitada al usuario. Después de
+            recoger toda la información, se requiere imprimir el índice de cada posición en el arreglo con su valor de
+            la siguiente manera:
+            <pre>
+             [0] = 55  
+             [1] = 99 
+             [2] = 11 
+             [3] = 56 
+             [4] = 69               
+             </pre>
+
+        </div>
+
+        <button class="naranja" onclick=esconder(1)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package arreglos.objects;
+
+                public class impresion {
+                    int i;
+
+
+                    public void blucle_impresion (int tabla[]) {
+
+                        for (i = 0; i <= 4; i++){
+                            System.out.println("["+i+"]" + " = " +tabla[i]);
+
+                        }
+                    }
+                }
+    //////////////////////////////////////////////////////////////////////////////////////
+               
+    package arreglos;
+
+import arreglos.objects.impresion;
+
+public class main {
+
+    public static void main(String[] args) {
+        int[] tabla;
+        tabla =  new int [5];
+
+        tabla[0] = 55;
+        tabla[1] = 99;
+        tabla[2] = 11;
+        tabla[3] = 56;
+        tabla[4] = 69;
+
+        impresion bucle = new impresion();
+
+        bucle.blucle_impresion(tabla);;
+
+   }
+}
+
+            </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO DOS -->
+    <div class="aguamarina">
+        <h3>PUNTO # 2</h3>
+
+        <button class="naranja" onclick=esconder(2)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Crear un arreglo de números enteros de 20 posiciones, el cual, debe ser llenado con números aleatorios entre
+            1 y 100; después de haber llenado dicho arreglo, se debe volver a recorrer utilizando un ciclo diferente al
+            que se usó para llenarse e imprimir los números pares e impares. Ejemplo
+            <pre>
+              Números pares: 2,4,6,8,10 
+              Números impares: 1,3,5,7,9     
+            </pre>
+        </div>
+
+        <button class="naranja" onclick=esconder(3)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                package arreglos.objects;
+
+                import java.util.ArrayList;
+                import java.util.List;
+                
+                public class ClasificacionNumeros {
+                
+                    private List<String> pares;
+                    private List<String> impares;
+                
+                    public ClasificacionNumeros (){
+                        this.pares = new ArrayList<>();
+                        this.impares = new ArrayList<>();
+                    }
+                
+                    public List<String> getPares() {
+                        return pares;
+                    }
+                
+                    public void setPares(List<String> pares) {
+                        this.pares = pares;
+                    }
+                
+                    public List<String> getImpares() {
+                        return impares;
+                    }
+                
+                    public void setImpares(List<String> impares) {
+                        this.impares = impares;
+                    }
+                
+                    public void setValuePares (String numero){
+                        this.pares.add(numero);
+                    }
+                
+                    public void setValueImpares(String numero){
+                        this.impares.add(numero);
+                    }
+                }
+////////////////////////////////////////////////////////////////////////////////////////
+
+package arreglos.objects;
+
+public class numeros {
+
+    int[] tabla;
+    int i;
+    int resultado;
+
+
+    public int[] pares (){
+        tabla = new int[20];
+        for(i=0 ; i<=19;i++){
+
+            int numero = (int)(Math.random()*(100-1))+1;
+            tabla[i] = numero;
+        }
+        return tabla;
+    }
+
+    public ClasificacionNumeros numericaa (int[] tabla){
+
+        ClasificacionNumeros arregloNumeros = new ClasificacionNumeros();
+        for(i=0 ; i<20 ; i++){
+          resultado = tabla[i] %2;
+
+          if(resultado==1){
+
+              arregloNumeros.setValueImpares(tabla[i] + "");
+          }
+          else{
+              arregloNumeros.setValuePares(tabla[i] + "");
+          }
+        }
+        return arregloNumeros;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+package arreglos;
+
+import arreglos.objects.ClasificacionNumeros;
+import arreglos.objects.numeros;
+
+public class main {
+    public static void main(String[] args) {
+        int[] par;
+        par = new int [20];
+
+        numeros arreglo = new numeros();
+
+      par=arreglo.pares();
+
+
+        ClasificacionNumeros impresion = arreglo.numericaa(par);
+        System.out.println(" ");
+        System.out.println("los numero impares son: " + impresion.getImpares());
+        System.out.print("los numero pares son: " + impresion.getPares());
+        System.out.println(" ");
+
+
+
+    }
+}
+           
+        </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO TRES -->
+    <div class="aguamarina">
+        <h3>PUNTO # 3</h3>
+
+        <button class="naranja" onclick=esconder(4)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Imprimir los números primos del 1 al 1000, el resultado debe ser buscado de forma matemática.
+
+        </div>
+
+        <button class="naranja" onclick=esconder(5)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package arreglo.objetcs;
+
+                public class Primos {
+                
+                
+                    
+                    double residuo;
+                
+                    public void numerosPrimos () {
+                        int contador;
+                        for (int i = 0; i < 999; i++) {
+                            contador = 0;
+                            for(int j = i; j > 0 ; j--){
+                                residuo = i%j;
+                
+                                if (residuo==0.0){
+                                    contador += 1;
+                                }
+                            }
+                            if(contador == 2){
+                               System.out.print(i+" ");
+                            }
+                
+                
+                        }
+                
+                
+                    }
+                }
+        /////////////////////////////////////////////////////////////////////                     
+        
+        package arreglo;
+
+        import arreglo.objetcs.Primos;
+        import jdk.swing.interop.SwingInterOpUtils;
+        
+        public class main {
+        
+            public static void main(String[] args) {
+        
+                Primos primos = new Primos();
+                System.out.println("--------------LISTA NUMEROS PRIMOS HASTA 1000-----------------");
+                System.out.println("");
+                primos.numerosPrimos();
+        
+            }
+        }
+        
+    </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO CUATRO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 4</h3>
+
+        <button class="naranja" onclick=esconder(6)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+
+            Dada la siguiente matriz bidimensional, el cual debe de quemar en el código
+            <pre>
+               01 02 03 04 05
+               06 07 08 09 10
+               11 12 13 14 15
+               16 17 18 19 20  
+               
+               Utilizando el conocimiento adquirido, a excepción de hacerlo de forma manual, imprima la siguiente matriz bidimensional.
+                
+               01 02 03 04 05
+               10 09 08 07 06
+               11 12 13 14 15
+               20 19 18 17 16
+            
+            </pre>
+        </div>
+
+
+        <button class="naranja" onclick=esconder(7)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package arreglos.objects;
+
+                import java.util.ArrayList;
+                import java.util.List;
+                
+                public class Matriz {
+                    int fila;
+                    int columna;
+                
+                    public int[][] matrizNormal() {
+                        int[][] normal;
+                        normal = new int[4][5];
+                        int contador = 1;
+                
+                        for (fila = 0; fila <= 3; fila++) {
+                            for (columna = 0; columna <= 4; columna++) {
+                                normal[fila][columna] = contador;
+                                contador = contador + 1;
+                
+                                if (contador <= 10) {
+                                    System.out.print("0" + normal[fila][columna] + " ");
+                                }
+                                if (contador > 10) {
+                                    System.out.print(normal[fila][columna] + " ");
+                                }
+                            }
+                            System.out.println("");
+                        }
+                        return normal;
+                    }
+                
+                
+                    public void invertida(int[][] matriz) {
+                
+                        int contador = 0;
+                        fila = 0;
+                        columna = 0;
+                        while (contador <= 3) {
+                
+                            if (fila == 0 || fila == 2) {
+                
+                                for (columna = 0; columna <= 4; columna++) {
+                
+                                    if (matriz[fila][columna] < 10) {
+                                        System.out.print("0" + matriz[fila][columna] + " ");
+                                    }
+                                    if (matriz[fila][columna] >= 10) {
+                                        System.out.print(matriz[fila][columna] + " ");
+                                    }
+                
+                                }
+                                System.out.println("");
+                            }
+                
+                            if(fila == 1 || fila == 3){
+                                for (columna = 4; columna >= 0; columna--) {
+                
+                                    if (matriz[fila][columna] < 10) {
+                                        System.out.print("0" + matriz[fila][columna] + " ");
+                                    }
+                                    if (matriz[fila][columna] >= 10) {
+                                        System.out.print(matriz[fila][columna] + " ");
+                                    }
+                                }
+                                System.out.println("");
+                
+                            }
+                            contador = contador + 1;
+                            fila = fila + 1;
+                        }
+                    }
+                }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package arreglos;
+
+import arreglos.objects.Matriz;
+
+public class main {
+    public static void main(String[] args) {
+        System.out.println("--------------------Matriz Normal-----------------------------");
+        Matriz matriz = new Matriz();
+        int[][] recibirNormal= matriz.matrizNormal();
+        System.out.println("--------------------Matriz Invertida-----------------------------");
+        matriz.invertida(recibirNormal);
+
+    }
+}
+
+
+        </pre>
+
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO CINCO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 5</h3>
+
+        <button class="naranja" onclick=esconder(8)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Se debe de imprimir el siguiente cuadro <br><br>
+            <img src="./img/CuadroTallerArreglos.png">
+            <br><br> El usuario deberá insertar la fila y columna de la cual desea ver el resultado, el resultado de
+            cada celda debe estar previamente calculado en una matriz bidimensional la cual cada resultado obedecerá a
+            la fila y columna insertada por el usuario.
+            <pre>
+
+            </pre>
+        </div>
+
+        <button class="naranja" onclick=esconder(9)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package arreglos.objects;
+
+                public class Matriz {
+
+                    public int[][] impresion(){
+
+                        int [][] tabla;
+                        tabla = new int[11][11];
+
+                        for(int i = 0 ; i <= 10 ; i++) {
+
+                            for (int j = 0; j <= 10; j++){
+                                    if(i<10 && j<10){
+                                    System.out.print("0"+j + " x 0" + i + " || ");
+                                    }
+                                    else if(i==10 && j<10){
+                                    System.out.print("0"+j + " x " + i + " || ");
+                                    }
+                                    else if(j==10 && i<10){
+                                    System.out.print(j + " x 0" + i + " || ");
+                                    }
+                                    if(j==10 && i==10){
+                                        System.out.print(j + " x " + i + " || ");
+                                    }
+                                tabla[i][j] = (i+1)*(j+1);
+                            }
+                            System.out.println(" ");
+                        }
+                        return tabla;
+                    }
+
+                }
+            
+            ////////////////////////////////////////////////////////////////////////////////////
+
+            package arreglos;
+
+import arreglos.objects.Matriz;
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        int fila;
+        int columna;
+        int tabla[][];
+
+
+        System.out.println("------------------TABLAS-----------------");
+        Matriz matriz = new Matriz();
+        tabla=matriz.impresion();
+
+        System.out.println("Elije la fila y la columna de la desdeas saber el resultado");
+        System.out.print("Fila: ");
+        fila = entrada.nextInt();
+        System.out.print("Columna: ");
+        columna = entrada.nextInt();
+
+        System.out.println("El resultado es : "+tabla[fila][columna]);
+
+
+
+
+    }
+}
+
+
+            
+            </pre>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+body {
+    background-color: #81c9fa;
+}
+
+pre {
+    text-align: left;
+}
+
+
+.morado {
+
+    background-color: #003785;
+    border-radius: 8px;
+    padding: 50px;
+    align-items: center;
+    margin: 5px;
+    
+}
+
+.rosado {
+    background-color: #003785;
+    border-radius: 8px;
+    margin: 5px;
+    width: 48.5%;
+    float: left;
+    text-align: center;
+
+}
+
+.azul {
+    background-color: orange;
+    border: none;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.azul:hover {
+    background-color: #1465bb;
+}
+
+.verde {
+    background-color: #1465bb;
+    border-radius: 8px;
+    padding: 15px;
+    align-items: center;
+    margin: 5px;
+    width: 99%;
+}
+
+.verde:hover {
+    background-color: blueviolet;
+}
+
+.aguamarina {
+    background-color: rgb(35, 165, 208);
+    border-radius: 8px;
+    padding: 50px;
+    align-items: center;
+    margin: 5px;
+}
+
+.naranja {
+    background-color: #003785;
+    border-radius: 8px;
+    text-align: center;
+    scroll-margin-top: 10px;
+    width: 98%;
+    cursor: pointer;
+
+}
+
+.naranja:hover {
+    background-color: brown;
+}
+
+.enunciado {
+    display: none;
+    background-color: orange;
+    border-radius: 8px;
+    text-align: justify;
+    width: 98%;
+    
+    
+    
+}
+
+h1,
+h3 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.regresar {
+    background-color: orange;
+    color: #003785;
+    border-radius: 20px;
+}
+
+.regresar:hover {
+    background-color: #81c9fa;
+    
+}
+
+p {
+    color: white;
+    text-align: justify;
+    margin: 10px;
+}
+
+.funcio{
+  margin: 30px;
+  align-items: center;
+  border-radius: 20px;
+  background-color: orange
+}
+
+.azul1 {
+    background-color: #003785;
+    border: none;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.azul1:hover{background-color: brown;}

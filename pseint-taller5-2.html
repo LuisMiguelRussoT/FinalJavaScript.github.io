@@ -1,0 +1,1012 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/codigo.js"></script>
+
+
+</head>
+
+<body>
+    <div class="morado">
+        <h1>PSEINT - TALLER # 5 Taller de Funciones(Ciclos)</h1>
+        <p>A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que
+            serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil
+            Estricto.</p>
+        <button class="regresar" onclick="window.location.href='index.html';">
+            <b>Volver</b>
+        </button>
+    </div>
+    
+        <!--PUNTO (FUNCIONES) NUMERO SEIS -->
+        <div class="aguamarina">
+            <h3>PUNTO (FUNCIONES) # 6</h3>
+    
+            <button class="naranja" onclick=esconder(0)>
+                <h3>ENUNCIADO</h3>
+            </button>
+    
+            <div class="enunciado">
+                Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos
+                telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y
+                organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté
+                almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el
+                sistema debe terminar cuando el usuario así lo indique.
+            </div>
+    
+            <button class="naranja" onclick=esconder(1)>
+                <h3>CODIGO</h3>
+    
+            </button>
+    
+            <div class="enunciado">
+                <pre class=" pre-scrollable">
+                    SubProceso menu ( apuntador,nombre1, nombre2, nombre3 )
+                    si apuntador = 1 Entonces
+                        Escribir "Menu Creacion Contacto";
+                        Escribir "que espacio de memoria deseas usar?";
+                        Escribir "";
+                        Escribir "1. Espacio de Memoria 1";
+                        Escribir "2. Espacio de Memoria 2";
+                        Escribir "3. Espacio de Memoria 3";
+                        Escribir "4. Salir";
+                        Escribir "";
+                    FinSi
+                    
+                    si apuntador = 2 Entonces
+                        Escribir "Menu Consulta Contacto";
+                        Escribir "que espacio deseas consultar?";
+                        Escribir "";
+                        Escribir "1.Espacio de Memoria 1";
+                        Escribir "2.Espacio de Memoria 2";
+                        Escribir "3.Espacio de Memoria 3";
+                        Escribir "4. Salir";
+                        Escribir "";
+                    FinSi
+                    
+                    si apuntador = 3 Entonces
+                        
+                        Escribir "Menu Eliminar Contacto";
+                        Escribir "que contacto deseas eliminar?";
+                        Escribir "";
+                        Escribir "1.", nombre1;
+                        Escribir "2.", nombre2;
+                        Escribir "3.", nombre3;
+                        Escribir "4. Salir";
+                        Escribir "";
+                    FinSi
+                    
+                FinSubProceso
+                
+                
+                SubProceso consulta ( nombre,apellido,tel,org )
+                    Definir volver como cadena;
+                    Escribir "Informacion Contacto";
+                    Escribir "";
+                    Escribir "Nombres: ",nombre;
+                    Escribir "Apellidos: ",apellido;
+                    Escribir "Telefono: ",tel;
+                    Escribir "Organizacion: ",org;
+                    Escribir "";
+                    Escribir "Para voler al menu presiona enter";
+                    leer volver;
+                    Limpiar Pantalla;
+                    
+                FinSubProceso
+                
+                SubProceso  finalizado ()
+                    
+                    Definir volver como cadena;
+                    Limpiar Pantalla;
+                    Escribir "Tu Contacto ha sido almacenado";
+                    Escribir "Presiona Enter para Volver al Menu";
+                    Leer volver;
+                    Limpiar Pantalla;
+                    
+                FinSubProceso
+                
+                SubProceso retorno <- captura ( letras )
+                    
+                    Definir retorno como caracter;
+                    Escribir letras;
+                    leer retorno;
+                    
+                FinSubProceso
+                
+                Proceso ciclosSeis
+                    // Declaracion de Variables
+                    
+                    Definir NombContacto1,NombContacto2,NombContacto3 como cadena;
+                    Definir ApellContacto1,ApellContacto2,ApellContacto3 como cadena;
+                    Definir Telefono, TelefContacto1,TelefContacto2,TelefContacto3 como cadena;
+                    Definir OrgContacto1, OrgContacto2, OrgContacto3 como cadena;
+                    
+                    Definir seleccionPrincipal, seleccionGuardado, seleccionConsulta, seleccionEliminar Como entero;
+                    Definir controlTelefono Como Entero;
+                    Definir volver,controlusuario como entero;
+                    
+                    // Asignacion Variables
+                
+                    seleccionPrincipal <- 0;
+                    controlTelefono <- 0;
+                    controlusuario <- 0;
+                    
+                    TelefContacto1 <- "1";
+                    TelefContacto2 <- "12";
+                    TelefContacto3 <- "123";
+                    
+                    NombContacto1 <- "Vacio";
+                    NombContacto2 <- "Vacio";
+                    NombContacto3 <- "Vacio";
+                    
+                    ApellContacto1 <- "Vacio";
+                    ApellContacto2 <- "Vacio";
+                    ApellContacto3 <- "Vacio";
+                    
+                    OrgContacto1 <- "Vacio";
+                    OrgContacto2 <- "Vacio";
+                    OrgContacto3 <- "Vacio";
+                    
+                    
+                    // Inicio Bucle
+                    
+                    Escribir "...";
+                    
+                    Mientras seleccionPrincipal <> 4 hacer
+                        
+                        Escribir "Bienvenido a tu Libreta de contactos";
+                        Escribir "";
+                        Escribir "1. Guardar Nuevo Contacto";
+                        Escribir "2. Buscar un Contacto";
+                        Escribir "3. Eliminar un Contacto";
+                        Escribir "4. Salir";
+                        
+                        leer seleccionPrincipal;
+                        
+                    
+                        si seleccionPrincipal = 1 entonces  // Menu de Guardado
+                            
+                            menu(seleccionPrincipal,NombContacto1,NombContacto2,NombContacto3);
+                            
+                            seleccionGuardado <- 0;
+                            controlTelefono <- 0;
+                            leer seleccionGuardado;
+                            
+                                    
+                            segun seleccionGuardado Hacer				
+                                
+                                1:
+                                    Escribir "Cual es el numero";
+                                    leer Telefono;
+                                    
+                                    si Telefono = TelefContacto2 O Telefono = TelefContacto3 Entonces
+                                        
+                                        Mientras controlTelefono <> 2 Hacer
+                                        Escribir "";
+                                        Escribir "El numero de contacto ya existe, Desea:";
+                                        Escribir "";
+                                        Escribir "1. Corregir el numero";
+                                        Escribir "2. Volver al Menu";
+                                        leer controlTelefono;
+                                        
+                                        Si controlTelefono = 1 Entonces;
+                                            
+                                            controlusuario <- 1;
+                                            
+                                            TelefContacto1<- captura ("Cual es el numero");
+                                            NombContacto1<- captura ("Nombre del Contacto");
+                                            ApellContacto1<- captura ("Apellido del Contacto");
+                                            OrgContacto1<- captura ("A que organizacion pertenece");
+                                            finalizado();
+                                        SiNo
+                                            Limpiar Pantalla;
+                                        FinSi	
+                                        controlTelefono <-2;
+                                        FinMientras	
+                                    finsi
+                                    
+                                        si controlusuario = 0 y controlTelefono <> 2 Entonces
+                                            TelefContacto1<- Telefono;
+                                            NombContacto1<- captura ("Nombre del Contacto");
+                                            ApellContacto1<- captura ("Apellido del Contacto");
+                                            OrgContacto1<- captura ("A que organizacion pertenece");
+                                            finalizado();
+                                        FinSi
+                                    controlusuario <- 0;
+                                    
+                                2:
+                                    Escribir "Cual es el numero";
+                                    leer Telefono;
+                                    
+                                    si Telefono = TelefContacto1 O Telefono = TelefContacto3 Entonces
+                                        
+                                        Mientras controlTelefono <> 2 Hacer
+                                            Escribir "";
+                                            Escribir "El numero de contacto ya existe, Desea:";
+                                            Escribir "";
+                                            Escribir "1. Corregir el numero";
+                                            Escribir "2. Volver al Menu";
+                                            leer controlTelefono;
+                                            
+                                            Si controlTelefono = 1 Entonces;
+                                                
+                                                controlusuario <- 1;
+                                                
+                                                TelefContacto2<- captura ("Cual es el numero");
+                                                NombContacto2<- captura ("Nombre del Contacto");
+                                                ApellContacto2<- captura ("Apellido del Contacto");
+                                                OrgContacto2<- captura ("A que organizacion pertenece");
+                                                finalizado();
+                                            SiNo
+                                                Limpiar Pantalla;
+                                            FinSi	
+                                            controlTelefono <-2;
+                                        FinMientras	
+                                    finsi
+                                    
+                                    si controlusuario = 0 y controlTelefono <> 2 Entonces
+                                        TelefContacto2<- Telefono;
+                                        NombContacto2<- captura ("Nombre del Contacto");
+                                        ApellContacto2<- captura ("Apellido del Contacto");
+                                        OrgContacto2<- captura ("A que organizacion pertenece");
+                                        finalizado();
+                                    FinSi
+                                    controlusuario <- 0;
+                                                        
+                                3:
+                                    Escribir "Cual es el numero";
+                                    leer Telefono;
+                                    
+                                    si Telefono = TelefContacto1 O Telefono = TelefContacto2 Entonces
+                                        
+                                        Mientras controlTelefono <> 2 Hacer
+                                            Escribir "";
+                                            Escribir "El numero de contacto ya existe, Desea:";
+                                            Escribir "";
+                                            Escribir "1. Corregir el numero";
+                                            Escribir "2. Volver al Menu";
+                                            leer controlTelefono;
+                                            
+                                            Si controlTelefono = 1 Entonces;
+                                                
+                                                controlusuario <- 1;
+                                                
+                                                TelefContacto3<- captura ("Cual es el numero");
+                                                NombContacto3<- captura ("Nombre del Contacto");
+                                                ApellContacto3<- captura ("Apellido del Contacto");
+                                                OrgContacto3<- captura ("A que organizacion pertenece");
+                                                finalizado();
+                                            SiNo
+                                                Limpiar Pantalla;
+                                            FinSi	
+                                            controlTelefono <-2;
+                                        FinMientras	
+                                    finsi
+                                    
+                                    si controlusuario = 0 y controlTelefono <> 2 Entonces
+                                        TelefContacto3<- Telefono;
+                                        NombContacto3<- captura ("Nombre del Contacto");
+                                        ApellContacto3<- captura ("Apellido del Contacto");
+                                        OrgContacto3<- captura ("A que organizacion pertenece");
+                                        finalizado();
+                                    FinSi
+                                    controlusuario <- 0;
+                                4:
+                                    Limpiar Pantalla;
+                                    
+                            FinSegun
+                        finsi	
+                            
+                        si seleccionPrincipal = 2 entonces // Inicio Menu Consulta
+                            
+                            menu(seleccionPrincipal,NombContacto1,NombContacto2,NombContacto3);
+                
+                            Escribir "";
+                            
+                            seleccionConsulta <- 0;
+                            controlTelefono <- 0;
+                            leer seleccionConsulta;
+                                
+                        Segun seleccionConsulta hacer
+                            1:
+                                consulta(NombContacto1,ApellContacto1,TelefContacto1,OrgContacto1);
+                            2:
+                                consulta(NombContacto2,ApellContacto2,TelefContacto2,OrgContacto2);
+                            3:
+                                consulta(NombContacto3,ApellContacto3,TelefContacto3,OrgContacto3);
+                            4:
+                                Limpiar Pantalla;
+                            
+                        FinSegun
+                        
+                    FinSi	// Fin Menu consulta
+                    
+                        
+                    si seleccionPrincipal= 3 entonces
+                        
+                        menu(seleccionPrincipal,NombContacto1,NombContacto2,NombContacto3);
+                        
+                        seleccionPrincipal <- 0;
+                        controlTelefono <- 0;
+                        leer seleccionEliminar;
+                        
+                        
+                        Segun seleccionEliminar hacer
+                            
+                            1:
+                                Escribir "Contacto Eliminado";
+                                Escribir "";
+                                NombContacto1 <- "Vacio";
+                                ApellContacto1 <- "Vacio";
+                                TelefContacto1 <- "1";
+                                OrgContacto1 <- "Vacio";
+                                Escribir "";
+                                Escribir "Para voler al menu presiona enter";
+                                leer volver;
+                                Limpiar Pantalla;
+                                
+                            2:
+                                Escribir "Contacto Eliminado";
+                                Escribir "";
+                                NombContacto2 <- "Vacio";
+                                ApellContacto2 <- "Vacio";
+                                TelefContacto2 <- "12";
+                                OrgContacto2 <- "Vacio";
+                                Escribir "";
+                                Escribir "Para voler al menu presiona enter";
+                                leer volver;
+                                Limpiar Pantalla;
+                                
+                            3:
+                                Escribir "Contacto Eliminado";
+                                Escribir "";
+                                NombContacto3 <- "Vacio";
+                                ApellContacto3 <- "Vacio";
+                                TelefContacto3 <- "123";
+                                OrgContacto3 <- "Vacio";
+                                Escribir "";
+                                Escribir "Para voler al menu presiona enter";
+                                leer volver;
+                                Limpiar Pantalla;
+                            4:
+                                Limpiar Pantalla;	
+                        FinSegun
+                        
+                    FinSi		
+                                
+                finmientras
+                
+                FinProceso
+                                     
+    
+                </pre>
+            </div>
+    
+        </div>
+        <!--PUNTO (FUNCIONES) NUMERO SIETE -->
+        <div class="aguamarina">
+            <h3>PUNTO (FUNCIONES) # 7</h3>
+    
+            <button class="naranja" onclick=esconder(2)>
+                <h3>ENUNCIADO</h3>
+            </button>
+    
+            <div class="enunciado">
+                El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y
+                requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere
+                que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como
+                son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de ingresar al
+                parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el parqueadero. Recuerde que
+                el sistema debe terminar cuando el usuario así lo indique. Tenga en presente que el parqueadero solo puede
+                almacenar máximo 5 vehículos.
+            </div>
+            <button class="naranja" onclick=esconder(3)>
+                <h3>CODIGO</h3>
+    
+            </button>
+    
+            <div class="enunciado">
+                <pre class=" pre-scrollable">
+                    SubProceso  salida ( placa,volver )
+	Escribir 'Se le ha dado salida al vehiculo de placa: ',placa;
+	Escribir 'presiona entrer para finalizar';
+	Leer volver;
+	
+FinSubProceso
+
+SubProceso  consulta( placa,marca,nombreCompleto,numeroTel,volver )
+	
+	Escribir 'su vehiculo de placa ',placa;
+	Escribir 'es un vehiculo marca: ',marca;
+	Escribir 'Su propietario es: ',nombreCompleto;
+	Escribir 'Su telefono es: ',numeroTel;
+	Escribir 'Presione enter para volver al menu inicial';
+	Leer volver;
+	Borrar Pantalla;
+	
+FinSubProceso
+
+SubProceso info <- captura (letras)
+	Definir info Como Caracter;
+	Escribir letras;
+	Leer info;
+FinSubProceso
+
+SubProceso control <- validarPlaca(placa,volver)
+	definir control como entero;
+	
+	Si placa<>'' Entonces
+		Escribir 'Este estacionamiento se encuentra ocupado, intente en otro';
+		Escribir 'Presione enter para volver al menu principal';
+		Leer volver;
+		Borrar Pantalla;
+		control <- 1;
+	SiNo
+		control <- 0;
+	FinSi
+FinSubProceso
+
+
+
+Proceso CiclosSiete
+	Definir placa,placa1,placa2,placa3,placa4,placa5 Como cadena;
+	Definir marca1,marca2,marca3,marca4,marca5 Como cadena;
+	Definir nombreCompleto,nombreCompleto2,nombreCompleto3,nombreCompleto4,nombreCompleto5 Como cadena;
+	Definir numeroTel1,numeroTel2,numeroTel3,numeroTel4,numeroTel5 Como cadena;
+	Definir seleccionPrincipal,seleccionGuardado,seleccionConsulta,seleccionSalida Como Entero;
+	Definir controlVehiculo,contador Como Entero;
+	Definir controlusuario Como Entero;
+	Definir volver Como Caracter;
+	// Asignacion Variables
+	seleccionPrincipal <- 0;
+	contador <- 0;
+	controlVehiculo <- 0;
+	controlusuario <- 0;
+	nombreCompleto <- 'Vacio';
+	nombreCompleto2 <- 'Vacio';
+	nombreCompleto3 <- 'Vacio';
+	nombreCompleto4 <- 'Vacio';
+	nombreCompleto5 <- 'Vacio';
+	placa1 <- '123';
+	placa2 <- '';
+	placa3 <- '';
+	placa4 <- '';
+	placa5 <- '';
+	marca1 <- 'Vacio';
+	marca2 <- 'Vacio';
+	marca3 <- 'Vacio';
+	marca4 <- 'Vacio';
+	marca5 <- 'Vacio';
+	numeroTel1 <- '';
+	numeroTel2 <- '';
+	numeroTel3 <- '';
+	numeroTel4 <- '';
+	numeroTel5 <- '';
+	
+	// Inicio Bucle
+	Escribir '...';
+	Mientras seleccionPrincipal<>4 Hacer
+		volver <- 'a';
+		Escribir 'Bienvenido a Parqueadero El Guardian';
+		Escribir '';
+		Escribir '1. Ingresar Vehiculo';
+		Escribir '2. Buscar Vehiculo';
+		Escribir '3. Retirar Vehiculo';
+		Escribir '4. Salir';
+		Leer seleccionPrincipal;
+		Si seleccionPrincipal=1 Entonces // Menu de Parqueo
+			Escribir 'Menu Ingreso Vehiculo';
+			Escribir 'Donde deseas Parquear el Vehiculo?';
+			Escribir '';
+			Escribir '1. Estacionamiento  # 1';
+			Escribir '2. Estacionamiento  # 2';
+			Escribir '3. Estacionamiento  # 3';
+			Escribir '4. Estacionamiento  # 4';
+			Escribir '5. Estacionamiento  # 5';
+			Escribir '6. Salir';
+			Escribir '';
+			Leer seleccionGuardado;
+			Escribir 'Cual es la placa del Vehiculo?';
+			Leer placa;
+			Segun seleccionGuardado  Hacer
+				1:
+					controlusuario <-validarPlaca(placa1,volver);
+				2:
+					controlusuario <-validarPlaca(placa2,volver);
+				3:
+					controlusuario <-validarPlaca(placa3,volver);
+				4:
+					controlusuario <-validarPlaca(placa4,volver);
+				5:
+					controlusuario <-validarPlaca(placa5,volver);
+			FinSegun
+			Si placa=placa1 O placa=placa2 O placa=placa3 O placa=placa4 O placa=placa5 Entonces
+				Mientras volver<>'' Hacer
+					Escribir '';
+					Escribir 'El Vehiculo ya se encuentra estacionado';
+					Escribir '';
+					Escribir 'Presione enter para volver al menu inicial';
+					Leer volver;
+					Borrar Pantalla;
+				FinMientras
+				controlusuario <- 1;
+			FinSi
+			Si controlusuario=0 Entonces
+				
+				Segun seleccionGuardado  Hacer
+					1:
+						placa1 <- placa;
+						marca1 <- captura("Cual el marca del Vehiculo?");
+						nombreCompleto <- captura("Nombre Completo del Propietario del Vehiculo?");
+						numeroTel1 <- captura('Telefono del Propietario del Vehiculo');
+						Escribir '';
+						Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+						Escribir 'Presione enter para finalizar';
+						Leer volver;
+						Borrar Pantalla;
+					2:
+						placa2 <- placa;
+						marca2 <- captura("Cual el marca del Vehiculo?");
+						nombreCompleto2 <- captura("Nombre Completo del Propietario del Vehiculo?");
+						numeroTel2 <- captura('Telefono del Propietario del Vehiculo');
+						Escribir '';
+						Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+						Escribir 'Presione enter para finalizar';
+						Leer volver;
+						Borrar Pantalla;
+					3:
+						placa3 <- placa;
+						marca3 <- captura("Cual el marca del Vehiculo?");
+						nombreCompleto3 <- captura("Nombre Completo del Propietario del Vehiculo?");
+						numeroTel3 <- captura('Telefono del Propietario del Vehiculo');
+						Escribir '';
+						Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+						Escribir 'Presione enter para finalizar';
+						Leer volver;
+						Borrar Pantalla;
+					4:
+						placa4 <- placa;
+						marca4 <- captura("Cual el marca del Vehiculo?");
+						nombreCompleto4 <- captura("Nombre Completo del Propietario del Vehiculo?");
+						numeroTel4 <- captura('Telefono del Propietario del Vehiculo');
+						Escribir '';
+						Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+						Escribir 'Presione enter para finalizar';
+						Leer volver;
+						Borrar Pantalla;
+					5:
+						placa5 <- placa;
+						marca5 <- captura("Cual el marca del Vehiculo?");
+						nombreCompleto5 <- captura("Nombre Completo del Propietario del Vehiculo?");
+						numeroTel5 <- captura('Telefono del Propietario del Vehiculo');
+						Escribir '';
+						Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+						Escribir 'Presione enter para finalizar';
+						Leer volver;
+						Borrar Pantalla;
+				FinSegun
+			FinSi
+			controlusuario <- 0;
+		FinSi
+		
+		Si seleccionPrincipal=2 Entonces
+			Escribir 'Que placa deseas encontrar?';
+			Leer placa;
+			Si placa=placa1 Entonces
+				Escribir 'se encuentra en el estacionamiento # ',1;
+				consulta(placa1,marca1,nombreCompleto,numeroTel1,volver);
+			FinSi
+			Si placa=placa2 Entonces
+				Escribir 'se encuentra en el estacionamiento # ',2;
+				consulta(placa2,marca2,nombreCompleto2,numeroTel2,volver);
+			FinSi
+			Si placa=placa3 Entonces
+				Escribir 'se encuentra en el estacionamiento # ',3;
+				consulta(placa3,marca3,nombreCompleto3,numeroTel3,volver);
+			FinSi
+			Si placa=placa4 Entonces
+				Escribir 'se encuentra en el estacionamiento # ',4;
+				consulta(placa4,marca4,nombreCompleto4,numeroTel4,volver);
+			FinSi
+			Si placa=placa5 Entonces
+				Escribir 'se encuentra en el estacionamiento # ',5;
+				consulta(placa5,marca5,nombreCompleto5,numeroTel5,volver);
+			FinSi
+			Si placa<>placa1 Y placa<>placa2 Y placa<>placa3 Y placa<>placa4 Y placa<>placa5 Entonces
+				Escribir 'Esta vehiculo NO se encuentra en el estacionamiento ';
+				Escribir 'Por favor verifique';
+				Escribir '';
+				Leer volver;
+				Borrar Pantalla;
+			FinSi
+		FinSi
+		Si seleccionPrincipal=3 Entonces
+			Si controlusuario<5 Entonces
+				Escribir 'En que estacionamiento se encuentra el Vehiculo que va a salir?';
+				Escribir '';
+				Escribir 'Estaciomaniento # 1: ',placa1;
+				Escribir 'Estaciomaniento # 2: ',placa2;
+				Escribir 'Estaciomaniento # 3: ',placa3;
+				Escribir 'Estaciomaniento # 4: ',placa4;
+				Escribir 'Estaciomaniento # 5: ',placa5;
+				Escribir '';
+				Leer seleccionSalida;
+				controlusuario <- seleccionSalida;
+				Mientras controlusuario>=6 O controlusuario<1 Hacer
+					Borrar Pantalla;
+					Escribir 'Disculpa, pero solo manejamos 5 plazas, por favor verifica';
+					Escribir 'presiona entrer para continuar';
+					Leer volver;
+					controlusuario <- 1;
+					Borrar Pantalla;
+				FinMientras
+				controlusuario <- 0;
+			FinSi
+			Segun seleccionSalida  Hacer
+				1:
+					salida(placa1,volver);
+					placa1 <- '';
+					marca1 <- '';
+					nombreCompleto <- '';
+					numeroTel1 <- '';
+					Borrar Pantalla;
+				2:
+					salida(placa2,volver);
+					placa2 <- '';
+					marca2 <- '';
+					nombreCompleto2 <- '';
+					numeroTel2 <-'';
+					Borrar Pantalla;
+				3:
+					salida(placa3,volver);
+					placa3 <- '';
+					marca3 <- '';
+					nombreCompleto3 <- '';
+					numeroTel3 <- '';
+					Borrar Pantalla;
+				4:
+					salida(placa4,volver);
+					placa4 <- '';
+					marca4 <- '';
+					nombreCompleto4 <- '';
+					numeroTel4 <- '';
+					Borrar Pantalla;
+				5:
+					salida(placa5,volver);
+					placa5 <- '';
+					marca5 <- '';
+					nombreCompleto5 <- '';
+					numeroTel5 <-'';
+					Borrar Pantalla;
+			FinSegun
+		FinSi
+	FinMientras
+FinProceso
+
+                   
+                </pre>
+            </div>
+            <button class="naranja" onclick=esconder(4)>
+                <h3>VIDEO</h3>
+            </button>
+    
+            <div class="enunciado">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/O9pF8msv0MQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    
+        <!--PUNTO (FUNCIONES) NUMERO OCHO -->
+        <div class="aguamarina">
+            <h3>PUNTO (FUNCIONES) # 8</h3>
+    
+            <button class="naranja" onclick=esconder(5)>
+                <h3>ENUNCIADO</h3>
+            </button>
+    
+            <div class="enunciado">
+                La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los
+                cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de
+                adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso al curso,
+                consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si fueron aprobados o
+                no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela
+                tiene capacidad máxima de gestionar 8 usuarios en su totalidad.
+            </div>
+            <button class="naranja" onclick=esconder(6)>
+                <h3>CODIGO</h3>
+    
+            </button>
+    
+            <div class="enunciado">
+                <pre class=" pre-scrollable">
+                    SubProceso  salida ( placa,volver )
+                    Escribir 'Se le ha dado salida al vehiculo de placa: ',placa;
+                    Escribir 'presiona entrer para finalizar';
+                    Leer volver;
+                    
+                FinSubProceso
+                
+                SubProceso  consulta( placa,marca,nombreCompleto,numeroTel,volver )
+                    
+                    Escribir 'su vehiculo de placa ',placa;
+                    Escribir 'es un vehiculo marca: ',marca;
+                    Escribir 'Su propietario es: ',nombreCompleto;
+                    Escribir 'Su telefono es: ',numeroTel;
+                    Escribir 'Presione enter para volver al menu inicial';
+                    Leer volver;
+                    Borrar Pantalla;
+                    
+                FinSubProceso
+                
+                SubProceso info <- captura (letras)
+                    Definir info Como Caracter;
+                    Escribir letras;
+                    Leer info;
+                FinSubProceso
+                
+                SubProceso control <- validarPlaca(placa,volver)
+                    definir control como entero;
+                    
+                    Si placa<>'' Entonces
+                        Escribir 'Este estacionamiento se encuentra ocupado, intente en otro';
+                        Escribir 'Presione enter para volver al menu principal';
+                        Leer volver;
+                        Borrar Pantalla;
+                        control <- 1;
+                    SiNo
+                        control <- 0;
+                    FinSi
+                FinSubProceso
+                
+                
+                
+                Proceso CiclosSiete
+                    Definir placa,placa1,placa2,placa3,placa4,placa5 Como cadena;
+                    Definir marca1,marca2,marca3,marca4,marca5 Como cadena;
+                    Definir nombreCompleto,nombreCompleto2,nombreCompleto3,nombreCompleto4,nombreCompleto5 Como cadena;
+                    Definir numeroTel1,numeroTel2,numeroTel3,numeroTel4,numeroTel5 Como cadena;
+                    Definir seleccionPrincipal,seleccionGuardado,seleccionConsulta,seleccionSalida Como Entero;
+                    Definir controlVehiculo,contador Como Entero;
+                    Definir controlusuario Como Entero;
+                    Definir volver Como Caracter;
+                    // Asignacion Variables
+                    seleccionPrincipal <- 0;
+                    contador <- 0;
+                    controlVehiculo <- 0;
+                    controlusuario <- 0;
+                    nombreCompleto <- 'Vacio';
+                    nombreCompleto2 <- 'Vacio';
+                    nombreCompleto3 <- 'Vacio';
+                    nombreCompleto4 <- 'Vacio';
+                    nombreCompleto5 <- 'Vacio';
+                    placa1 <- '123';
+                    placa2 <- '';
+                    placa3 <- '';
+                    placa4 <- '';
+                    placa5 <- '';
+                    marca1 <- 'Vacio';
+                    marca2 <- 'Vacio';
+                    marca3 <- 'Vacio';
+                    marca4 <- 'Vacio';
+                    marca5 <- 'Vacio';
+                    numeroTel1 <- '';
+                    numeroTel2 <- '';
+                    numeroTel3 <- '';
+                    numeroTel4 <- '';
+                    numeroTel5 <- '';
+                    
+                    // Inicio Bucle
+                    Escribir '...';
+                    Mientras seleccionPrincipal<>4 Hacer
+                        volver <- 'a';
+                        Escribir 'Bienvenido a Parqueadero El Guardian';
+                        Escribir '';
+                        Escribir '1. Ingresar Vehiculo';
+                        Escribir '2. Buscar Vehiculo';
+                        Escribir '3. Retirar Vehiculo';
+                        Escribir '4. Salir';
+                        Leer seleccionPrincipal;
+                        Si seleccionPrincipal=1 Entonces // Menu de Parqueo
+                            Escribir 'Menu Ingreso Vehiculo';
+                            Escribir 'Donde deseas Parquear el Vehiculo?';
+                            Escribir '';
+                            Escribir '1. Estacionamiento  # 1';
+                            Escribir '2. Estacionamiento  # 2';
+                            Escribir '3. Estacionamiento  # 3';
+                            Escribir '4. Estacionamiento  # 4';
+                            Escribir '5. Estacionamiento  # 5';
+                            Escribir '6. Salir';
+                            Escribir '';
+                            Leer seleccionGuardado;
+                            Escribir 'Cual es la placa del Vehiculo?';
+                            Leer placa;
+                            Segun seleccionGuardado  Hacer
+                                1:
+                                    controlusuario <-validarPlaca(placa1,volver);
+                                2:
+                                    controlusuario <-validarPlaca(placa2,volver);
+                                3:
+                                    controlusuario <-validarPlaca(placa3,volver);
+                                4:
+                                    controlusuario <-validarPlaca(placa4,volver);
+                                5:
+                                    controlusuario <-validarPlaca(placa5,volver);
+                            FinSegun
+                            Si placa=placa1 O placa=placa2 O placa=placa3 O placa=placa4 O placa=placa5 Entonces
+                                Mientras volver<>'' Hacer
+                                    Escribir '';
+                                    Escribir 'El Vehiculo ya se encuentra estacionado';
+                                    Escribir '';
+                                    Escribir 'Presione enter para volver al menu inicial';
+                                    Leer volver;
+                                    Borrar Pantalla;
+                                FinMientras
+                                controlusuario <- 1;
+                            FinSi
+                            Si controlusuario=0 Entonces
+                                
+                                Segun seleccionGuardado  Hacer
+                                    1:
+                                        placa1 <- placa;
+                                        marca1 <- captura("Cual el marca del Vehiculo?");
+                                        nombreCompleto <- captura("Nombre Completo del Propietario del Vehiculo?");
+                                        numeroTel1 <- captura('Telefono del Propietario del Vehiculo');
+                                        Escribir '';
+                                        Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+                                        Escribir 'Presione enter para finalizar';
+                                        Leer volver;
+                                        Borrar Pantalla;
+                                    2:
+                                        placa2 <- placa;
+                                        marca2 <- captura("Cual el marca del Vehiculo?");
+                                        nombreCompleto2 <- captura("Nombre Completo del Propietario del Vehiculo?");
+                                        numeroTel2 <- captura('Telefono del Propietario del Vehiculo');
+                                        Escribir '';
+                                        Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+                                        Escribir 'Presione enter para finalizar';
+                                        Leer volver;
+                                        Borrar Pantalla;
+                                    3:
+                                        placa3 <- placa;
+                                        marca3 <- captura("Cual el marca del Vehiculo?");
+                                        nombreCompleto3 <- captura("Nombre Completo del Propietario del Vehiculo?");
+                                        numeroTel3 <- captura('Telefono del Propietario del Vehiculo');
+                                        Escribir '';
+                                        Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+                                        Escribir 'Presione enter para finalizar';
+                                        Leer volver;
+                                        Borrar Pantalla;
+                                    4:
+                                        placa4 <- placa;
+                                        marca4 <- captura("Cual el marca del Vehiculo?");
+                                        nombreCompleto4 <- captura("Nombre Completo del Propietario del Vehiculo?");
+                                        numeroTel4 <- captura('Telefono del Propietario del Vehiculo');
+                                        Escribir '';
+                                        Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+                                        Escribir 'Presione enter para finalizar';
+                                        Leer volver;
+                                        Borrar Pantalla;
+                                    5:
+                                        placa5 <- placa;
+                                        marca5 <- captura("Cual el marca del Vehiculo?");
+                                        nombreCompleto5 <- captura("Nombre Completo del Propietario del Vehiculo?");
+                                        numeroTel5 <- captura('Telefono del Propietario del Vehiculo');
+                                        Escribir '';
+                                        Escribir 'Vehiculo asignado al Estacionamiento # ',seleccionGuardado;
+                                        Escribir 'Presione enter para finalizar';
+                                        Leer volver;
+                                        Borrar Pantalla;
+                                FinSegun
+                            FinSi
+                            controlusuario <- 0;
+                        FinSi
+                        
+                        Si seleccionPrincipal=2 Entonces
+                            Escribir 'Que placa deseas encontrar?';
+                            Leer placa;
+                            Si placa=placa1 Entonces
+                                Escribir 'se encuentra en el estacionamiento # ',1;
+                                consulta(placa1,marca1,nombreCompleto,numeroTel1,volver);
+                            FinSi
+                            Si placa=placa2 Entonces
+                                Escribir 'se encuentra en el estacionamiento # ',2;
+                                consulta(placa2,marca2,nombreCompleto2,numeroTel2,volver);
+                            FinSi
+                            Si placa=placa3 Entonces
+                                Escribir 'se encuentra en el estacionamiento # ',3;
+                                consulta(placa3,marca3,nombreCompleto3,numeroTel3,volver);
+                            FinSi
+                            Si placa=placa4 Entonces
+                                Escribir 'se encuentra en el estacionamiento # ',4;
+                                consulta(placa4,marca4,nombreCompleto4,numeroTel4,volver);
+                            FinSi
+                            Si placa=placa5 Entonces
+                                Escribir 'se encuentra en el estacionamiento # ',5;
+                                consulta(placa5,marca5,nombreCompleto5,numeroTel5,volver);
+                            FinSi
+                            Si placa<>placa1 Y placa<>placa2 Y placa<>placa3 Y placa<>placa4 Y placa<>placa5 Entonces
+                                Escribir 'Esta vehiculo NO se encuentra en el estacionamiento ';
+                                Escribir 'Por favor verifique';
+                                Escribir '';
+                                Leer volver;
+                                Borrar Pantalla;
+                            FinSi
+                        FinSi
+                        Si seleccionPrincipal=3 Entonces
+                            Si controlusuario<5 Entonces
+                                Escribir 'En que estacionamiento se encuentra el Vehiculo que va a salir?';
+                                Escribir '';
+                                Escribir 'Estaciomaniento # 1: ',placa1;
+                                Escribir 'Estaciomaniento # 2: ',placa2;
+                                Escribir 'Estaciomaniento # 3: ',placa3;
+                                Escribir 'Estaciomaniento # 4: ',placa4;
+                                Escribir 'Estaciomaniento # 5: ',placa5;
+                                Escribir '';
+                                Leer seleccionSalida;
+                                controlusuario <- seleccionSalida;
+                                Mientras controlusuario>=6 O controlusuario<1 Hacer
+                                    Borrar Pantalla;
+                                    Escribir 'Disculpa, pero solo manejamos 5 plazas, por favor verifica';
+                                    Escribir 'presiona entrer para continuar';
+                                    Leer volver;
+                                    controlusuario <- 1;
+                                    Borrar Pantalla;
+                                FinMientras
+                                controlusuario <- 0;
+                            FinSi
+                            Segun seleccionSalida  Hacer
+                                1:
+                                    salida(placa1,volver);
+                                    placa1 <- '';
+                                    marca1 <- '';
+                                    nombreCompleto <- '';
+                                    numeroTel1 <- '';
+                                    Borrar Pantalla;
+                                2:
+                                    salida(placa2,volver);
+                                    placa2 <- '';
+                                    marca2 <- '';
+                                    nombreCompleto2 <- '';
+                                    numeroTel2 <-'';
+                                    Borrar Pantalla;
+                                3:
+                                    salida(placa3,volver);
+                                    placa3 <- '';
+                                    marca3 <- '';
+                                    nombreCompleto3 <- '';
+                                    numeroTel3 <- '';
+                                    Borrar Pantalla;
+                                4:
+                                    salida(placa4,volver);
+                                    placa4 <- '';
+                                    marca4 <- '';
+                                    nombreCompleto4 <- '';
+                                    numeroTel4 <- '';
+                                    Borrar Pantalla;
+                                5:
+                                    salida(placa5,volver);
+                                    placa5 <- '';
+                                    marca5 <- '';
+                                    nombreCompleto5 <- '';
+                                    numeroTel5 <-'';
+                                    Borrar Pantalla;
+                            FinSegun
+                        FinSi
+                    FinMientras
+                FinProceso
+                
+                                        
+                </pre>
+            </div>
+    
+        </div>
+</body>
+
+</html>

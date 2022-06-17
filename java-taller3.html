@@ -1,0 +1,1496 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/codigo.js"></script>
+
+
+</head>
+
+<body>
+    <div class="morado">
+        <h1>JAVA - TALLER # 3 Taller de Ciclos</h1>
+        <p>A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que
+            serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil
+            Estricto.</p>
+        <button class="regresar" onclick="window.location.href='index.html';">
+            <b>Volver</b>
+        </button>
+    </div>
+    <!--PUNTO NUMERO UNO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 1 </h3>
+
+        <button class="naranja" onclick=esconder(0)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar la siguiente figura por medio del ciclo Para:
+            <pre>
+                                                                        *
+                                                                        **
+                                                                        ***
+                                                                        ****
+                                                                        *****
+                                                                        ******
+                                                                        *******
+                                                                        ********
+                                                                        *********
+                                                                        **********
+             </pre>
+
+        </div>
+
+        <button class="naranja" onclick=esconder(1)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                package ciclos;
+
+                import ciclos.objects.figura;
+                
+                public class main {
+                
+                    public static void main(String[] args) {
+                
+                        String char_1;
+                        String char_2;
+                
+                        char_1 = "";
+                        char_2 = "";
+                
+                
+                        figura triangulo = new figura();
+                
+                        triangulo.triangulo(char_1, char_2);
+                
+                    }
+                }
+        
+        ///////////////////////////////////////////////////////////////////////
+
+
+        package ciclos.objects;
+
+                public class figura {
+
+                    String Asterisco;
+                    String Espacio;
+
+                    public void triangulo(String uno, String dos){
+
+                        for(int i = 0; i <= 10; i++) {
+                            System.out.println(uno);
+                            uno = uno + "*";
+                        }
+
+
+                    }
+                }
+            </pre>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+    <!--PUNTO NUMERO DOS -->
+    <div class="aguamarina">
+        <h3>PUNTO # 2</h3>
+
+        <button class="naranja" onclick=esconder(2)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar la siguiente figura por medio del ciclo Mientras - Hacer
+            <pre>
+                                                                   *
+                                                                  **
+                                                                 ***
+                                                                ****
+                                                               *****
+                                                              ******
+                                                             *******
+                                                            ********
+                                                           *********
+                                                          **********
+            </pre>
+        </div>
+
+        <button class="naranja" onclick=esconder(3)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                package ciclos.objects;
+
+                public class trianguloInvertido {
+                
+                    String Asterisco;
+                    String Espacio;
+                
+                    public void trianguloInvertido(String uno, String dos){
+                        System.out.println("***********");
+                        for(int i = 0; i < 10; i++) {
+                            dos = "";
+                            uno = uno + " ";
+                            for(int j = 0; j < (10-i); j++) {
+                
+                                dos = dos + "*";
+                
+                            }
+                            System.out.println( uno + dos);
+                        }
+                
+                    }
+                }
+            
+       ///////////////////////////////////////////////////////////////////////////////
+       
+       package ciclos;
+
+                import ciclos.objects.trianguloInvertido;
+
+                public class main {
+
+                    public static void main(String[] args) {
+
+                        String char_1;
+                        String char_2;
+
+                        char_1 = "";
+                        char_2 = "*";
+
+
+                        trianguloInvertido triangulo = new trianguloInvertido();
+
+                        triangulo.trianguloInvertido(char_1, char_2);
+
+                    }
+                }
+
+        </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO TRES -->
+    <div class="aguamarina">
+        <h3>PUNTO # 3</h3>
+
+        <button class="naranja" onclick=esconder(4)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar la siguiente figura por medio del ciclo Repetir - Hasta Que
+            <pre>
+                                                                         *
+                                                                        ***
+                                                                       *****
+                                                                      *******
+                                                                     *********
+                                                                    ***********
+                                                                   *************
+                                                                  ***************
+                                                                 *****************
+                                                                        ***
+                                                                        ***
+                                                                       *****
+                                                                      *******
+            </pre>
+        </div>
+
+        <button class="naranja" onclick=esconder(5)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package ciclos.objects;
+
+public class Tallo {
+
+    public void tallo(String uno, String dos){
+
+        int i;
+        int j;
+        System.out.println("----------***----------");
+        for(i=0 ; i<3 ; i++){
+            dos = "";
+            uno = uno + "**";
+
+            for(j=0 ; j<(10-i);j++){
+                dos = dos + "-";
+            }
+            System.out.println( dos + uno + dos);
+        }
+    }
+}
+///////////////////////////////////////////////////////////////////////////////
+
+package ciclos.objects;
+
+public class Arbol {
+
+    public void arbol(String uno, String dos){
+
+        int i;
+        int j;
+        System.out.println("-----------*-----------");
+        for(i=0 ; i<10 ; i++){
+            dos = "";
+            uno = uno + "**";
+
+            for(j=0 ; j<(10-i);j++){
+                dos = dos + "-";
+            }
+            System.out.println(dos + uno + dos);
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+package ciclos;
+
+import ciclos.objects.Arbol;
+import ciclos.objects.Tallo;
+
+public class main {
+
+    public static void main(String[] args) {
+        String uno;
+        String dos;
+
+        uno = "*";
+        dos = "-";
+        Arbol copa = new Arbol();
+        Tallo tallo = new Tallo();
+
+        copa.arbol(uno,dos);
+        tallo.tallo(uno,dos);
+    }
+}
+    
+         </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO CUATRO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 4</h3>
+
+        <button class="naranja" onclick=esconder(6)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+
+            Se requiere un programa que pueda crear la tabla de multiplicar del número que el usuario indique por medio
+            del ciclo Para; esta debe ser impresa del 1 al 10. Ejemplo, si el usuario indica que desea crear la tabla
+            del 5, entonces el resultado debería ser el siguiente:
+
+            <pre>
+                                            1 x 5 = 5
+                                            2 x 5 = 10
+                                            3 x 5 = 15
+                                            4 x 5 = 20
+                                            5 x 5 = 25
+                                            6 x 5 = 30
+                                            7 x 5 = 35
+                                            8 x 5 = 40
+                                            9 x 5 = 45
+                                            10 x 5 = 50
+                                            
+                                            </pre>
+        </div>
+
+
+        <button class="naranja" onclick=esconder(7)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                package ciclos.objects;
+
+                        public class tabla {
+
+
+                            int resultado;
+
+
+                            public void tablas(int numero){
+                                int i;
+
+                                for (i=1; i<11 ; i++){
+                                    resultado = i * numero;
+
+                                    System.out.println(i + " x " + numero + " = " + resultado );
+
+
+                                }
+                            }
+                        }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+    package ciclos;
+
+    import ciclos.objects.tabla;
+    
+    import java.util.Scanner;
+    
+    public class main {
+        public static void main(String[] args) {
+            Scanner entrada = new Scanner(System.in);
+            int numero;
+    
+            System.out.println("la tabla de que numero quieres ver?");
+            numero = entrada.nextInt();
+            System.out.println("");
+    
+            tabla tab = new tabla();
+    
+            tab.tablas(numero);
+    
+        }
+    }
+    
+
+
+            </pre>
+
+        </div>
+
+
+    </div>
+    <!--PUNTO NUMERO CINCO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 5</h3>
+
+        <button class="naranja" onclick=esconder(8)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Utilizando el ciclo que usted desee, crear un menú de ejecución infinita hasta que el usuario desee terminar
+            dicho ciclo.
+
+            <pre>
+
+                menú de usuario
+                1. Captura nombre
+                2. Saludar persona
+                3. Salir del sistema
+            </pre>
+        </div>
+
+        <button class="naranja" onclick=esconder(9)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package ciclos;
+
+
+import ciclos.objects.menu;
+
+import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+        int seleccion = 0;
+
+        Scanner entrada = new Scanner(System.in);
+        menu program = new menu();
+
+
+
+
+        while(seleccion != 3) {
+            System.out.println("------------MENU--------------");
+            System.out.println("1. Capturar nombre");
+            System.out.println("2. saludar ");
+            System.out.println("3. salir");
+            System.out.println("-------------------------------");
+
+            seleccion = entrada.nextInt();
+
+            if(seleccion == 1){
+                program.setNombre(program.captura());
+            }
+
+            if(seleccion == 2){
+                program.saludar(program.getNombre());
+            }
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+package ciclos.objects;
+
+import java.util.Scanner;
+
+public class menu {
+    Scanner entrada = new Scanner(System.in);
+    String nombre;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String captura (){
+        System.out.println("Cual es tu nombre?");
+        nombre = entrada.nextLine();
+        return nombre;
+    }
+
+    public void saludar (String nombre){
+        System.out.println("hola " + nombre);
+    }
+
+}
+
+            </pre>
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <!--PUNTO NUMERO SEIS -->
+    <div class="aguamarina">
+        <h3>PUNTO # 6</h3>
+
+        <button class="naranja" onclick=esconder(10)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos
+            telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y
+            organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté
+            almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el
+            sistema debe terminar cuando el usuario así lo indique.
+        </div>
+
+        <button class="naranja" onclick=esconder(11)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package ciclos.objects;
+
+import java.util.Scanner;
+
+public class contacto {
+    Scanner entrada = new Scanner(System.in);
+
+    String numero;
+    String nombre;
+    String orgnizacion;
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getOrgnizacion() {
+        return orgnizacion;
+    }
+
+    public void setOrgnizacion(String orgnizacion) {
+        this.orgnizacion = orgnizacion;
+    }
+
+
+    public String guardar(){
+        System.out.println("Numero que deseas guardar?");
+        numero = entrada.nextLine();
+        return numero;
+    }
+
+    public String guardar_2(){
+        System.out.println("Nombre del contacto");
+        nombre = entrada.nextLine();
+        return nombre;
+
+    }
+    public String guardar_3(){
+        System.out.println("A que organizacion pertenece");
+       orgnizacion = entrada.nextLine();
+        return orgnizacion;
+
+    }
+
+    public void consulta (String nombre, String numero, String Org){
+
+        System.out.println("--------------- INFORMACION DE CONTACTO -------------");
+        System.out.println("Nombre :" + nombre);
+        System.out.println("Telefono :" + numero);
+        System.out.println("Organizacion :" + Org);
+
+    }
+
+   }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package ciclos.objects;
+
+import java.util.Scanner;
+
+public class Validaciones {
+    String numero;
+    Scanner entrada = new Scanner(System.in);
+
+
+    public int numeroRepetido (String numero, String numero1 , String numero2, String numero3){
+
+        if (numero.equals(numero1) || numero.equals(numero2) || numero.equals(numero3)){
+            System.out.println("el numero de telefono ya existe");
+            return  1;
+        }
+        else {
+            return  2;
+        }
+    }
+
+    public String verificarNumero(){
+        System.out.println("Numero que deseas guardar?");
+        numero = entrada.nextLine();
+        return numero;
+    }
+
+
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package ciclos;
+
+import ciclos.objects.Validaciones;
+import ciclos.objects.contacto;
+
+import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        Validaciones check = new Validaciones();
+        contacto slot1 = new contacto();
+        contacto slot2 = new contacto();
+        contacto slot3 = new contacto();
+
+        int seleccion = 0;
+        int seleccionGuardado = 0;
+        int seleccionConsulta = 0;
+        int seleccionEliminar = 0;
+        int control = 0;
+        String numero;
+        String nombre;
+        String organizacion;
+
+        while (seleccion!= 4) {
+
+            System.out.println("-----------AGENDA TELEFONICA----------");
+            System.out.println("Presione :");
+            System.out.println("1. Guardar Nuevo contacto");
+            System.out.println("2. Consultar contactos");
+            System.out.println("3. Elimnar Contacto");
+            System.out.println("4. Salir");
+
+            seleccion = entrada.nextInt();
+
+            switch (seleccion){
+
+                case 1:
+                    System.out.println("-----------GUARDAR CONTACTO----------");
+                    System.out.println("Que slot de memoria desea usar:");
+                    System.out.println("1 - Slot # 1: "+ slot1.getNombre());
+                    System.out.println("2 - Slot # 2: "+ slot2.getNombre());
+                    System.out.println("3 - Slot # 3: "+ slot3.getNombre());
+                    System.out.println("4. Salir");
+
+                   seleccionGuardado = entrada.nextInt();
+
+                   numero = check.verificarNumero();
+
+                   control = check.numeroRepetido(numero,slot1.getNumero(),slot2.getNumero(),slot3.getNumero());
+
+                    if (control == 1) {
+                       System.out.println("numero repetido");
+                    }
+                    if (control == 2){
+                      if(seleccionGuardado == 1) {
+                          slot1.setNumero(numero);
+                          nombre = slot1.guardar_2();
+                          slot1.setNombre(nombre);
+                          organizacion = slot1.guardar_3();
+                          slot1.setOrgnizacion(organizacion);
+                      }
+                       if(seleccionGuardado == 2) {
+                           slot2.setNumero(numero);
+                           nombre = slot2.guardar_2();
+                           slot1.setNombre(nombre);
+                           organizacion = slot2.guardar_3();
+                           slot1.setOrgnizacion(organizacion);
+                       }
+                       if(seleccionGuardado == 3) {
+                           slot3.setNumero(numero);
+                           nombre = slot3.guardar_2();
+                           slot1.setNombre(nombre);
+                           organizacion = slot3.guardar_3();
+                           slot1.setOrgnizacion(organizacion);
+                       }
+
+                   }
+
+                    break;
+
+                case 2:
+
+                    System.out.println("-----------COLSULTA CONTACTO----------");
+                    System.out.println("Que slot de memoria desea consultar:");
+                    System.out.println("1 - Slot # 1: "+ slot1.getNombre());
+                    System.out.println("2 - Slot # 2: "+ slot2.getNombre());
+                    System.out.println("3 - Slot # 3: "+ slot3.getNombre());
+                    System.out.println("4. Salir");
+
+                    seleccionConsulta = entrada.nextInt();
+
+                    if (seleccionConsulta == 1){
+                        slot1.consulta(slot1.getNombre(), slot1.getNumero(), slot1.getOrgnizacion());
+                    }
+
+                    if (seleccionConsulta == 2){
+                        slot2.consulta(slot2.getNombre(), slot2.getNumero(), slot2.getOrgnizacion());
+                    }
+
+                    if (seleccionConsulta == 3){
+                        slot3.consulta(slot3.getNombre(), slot3.getNumero(), slot3.getOrgnizacion());
+                    }
+                    break;
+
+                case 3:
+
+                    System.out.println("-----------ELIMINAR CONTACTO----------");
+                    System.out.println("Que slot de memoria desea eliminar:");
+                    System.out.println("1 - Slot # 1: "+ slot1.getNombre());
+                    System.out.println("2 - Slot # 2: "+ slot2.getNombre());
+                    System.out.println("3 - Slot # 3: "+ slot3.getNombre());
+                    System.out.println("4. Salir");
+
+                    seleccionEliminar = entrada.nextInt();
+
+                    if(seleccionEliminar == 1){
+                        slot1.setNombre("");
+                        slot1.setNumero("");
+                        slot1.setOrgnizacion("");
+                    }
+
+                    if(seleccionEliminar == 2){
+                        slot2.setNombre("");
+                        slot2.setNumero("");
+                        slot2.setOrgnizacion("");
+
+                    }
+                    if(seleccionEliminar == 3){
+
+                        slot3.setNombre("");
+                        slot3.setNumero("");
+                        slot3.setOrgnizacion("");
+
+                    }
+                    break;
+
+
+
+            }
+
+
+        }
+    }
+}
+
+        </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO SIETE -->
+    <div class="aguamarina">
+        <h3>PUNTO # 7</h3>
+
+        <button class="naranja" onclick=esconder(12)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y
+            requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere
+            que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como
+            son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de ingresar al
+            parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el parqueadero. Recuerde que
+            el sistema debe terminar cuando el usuario así lo indique. Tenga en presente que el parqueadero solo puede
+            almacenar máximo 5 vehículos.
+        </div>
+        <button class="naranja" onclick=esconder(13)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package ciclos.objects;
+
+                    import java.util.Scanner;
+
+                    public class Verificador<placa1> {
+
+                        Scanner entrada = new Scanner(System.in);
+                        String placa;
+                        String marca;
+                        String nombre;
+                        String telefono;
+
+                        public int validar_repetido(String placa, String placa1, String placa2, String placa3, String placa4, String placa5) {
+                            int control;
+                            if (placa.equals(placa1) || placa.equals(placa2) || placa.equals(placa3) || placa.equals(placa4) || placa.equals(placa5)) {
+
+                                System.out.println("El Vehiculo ya se encuentra en el estacionamiento");
+                                return 1;
+                            } else {
+                                return 2;
+                            }
+                        }
+
+                        public int ocupado(String placa) {
+                            if (placa != null) {
+                                System.out.println("el estacionamiento esta ocupado");
+                                return 1;
+                            } else {
+                                return 2;
+                            }
+
+                        }
+
+                        public int consultar (String placa, String placa1, String placa2, String placa3, String placa4, String placa5) {
+
+                            if (placa.equals(placa1)) {
+                                return 1;
+                            }
+                            if (placa.equals(placa2)) {
+                                return 2;
+                            }
+                            if (placa.equals(placa3)) {
+                                return 3;
+                            }
+                            if (placa.equals(placa4)) {
+                                return 4;
+                            }
+                            if (placa.equals(placa5)) {
+                                return 5;
+                            }
+
+                            return 0;
+                        }
+                    }
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+                        package ciclos.objects;
+
+                        import java.util.Scanner;
+
+                        public class vehiculos {
+
+                            Scanner entrada = new Scanner(System.in);
+                            String placa;
+                            String marca;
+                            String nombre;
+                            String tel;
+
+                            public String getPlaca() {
+                                return placa;
+                            }
+
+                            public void setPlaca(String placa) {
+                                this.placa = placa;
+                            }
+
+                            public String getMarca() {
+                                return marca;
+                            }
+
+                            public void setMarca(String marca) {
+                                this.marca = marca;
+                            }
+
+                            public String getNombre() {
+                                return nombre;
+                            }
+
+                            public void setNombre(String nombre) {
+                                this.nombre = nombre;
+                            }
+
+                            public String getTelefono() {
+                                return tel;
+                            }
+
+                            public void setTelefono(String telefono) {
+                                this.tel = telefono;
+                            }
+
+
+
+                            public String ingresoMarca () {
+
+                                System.out.println("Cual es la marca del vehiculo");
+                                marca = entrada.nextLine();
+
+                                return marca;
+                            }
+
+                            public String ingresoNombre () {
+
+                                System.out.println("Quien es el dueño del vehiculo?");
+                                nombre = entrada.nextLine();
+
+                                return nombre;
+                            }
+
+                            public String ingresoTel () {
+
+                                System.out.println("Telefono del dueño del vehiculo");
+                                tel = entrada.nextLine();
+
+                                return tel;
+                            }
+
+                            public void impresion(String placa,String marca, String nombre,String tel){
+
+
+                                System.out.println();
+                                System.out.println(nombre + " es el propietario del vehiculo de placa " + placa + " y de marca " + marca);
+                                System.out.println("su telefono es " + tel);
+
+
+                            }
+                        }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package ciclos;
+
+import ciclos.objects.Verificador;
+import ciclos.objects.vehiculos;
+
+import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        vehiculos carro1 = new vehiculos();
+        vehiculos carro2 = new vehiculos();
+        vehiculos carro3 = new vehiculos();
+        vehiculos carro4 = new vehiculos();
+        vehiculos carro5 = new vehiculos();
+        Verificador check = new Verificador();
+
+        int seleccion = 0;
+        int seleccionIngreso = 0;
+        int seleccionRetiro = 0;
+        int control;
+        int controlConsulta;
+        int controlRetiro;
+        String placa;
+        String marca;
+        String nombre;
+        String tel;
+        while (seleccion != 4) {
+            System.out.println("--------------PARQUEADERO-------------------");
+            System.out.println("1. Ingresar un vehiculo");
+            System.out.println("2. Consultar vehiculo");
+            System.out.println("3. Retirar");
+            System.out.println("4. Salir");
+
+            seleccion = entrada.nextInt();
+
+
+            switch (seleccion) {
+                case 1:
+                    System.out.println("--------------INGRESAR PARQUEADERO-------------------");
+                    System.out.println(" ");
+                    System.out.println("1 - Estacionamiento #1: " + carro1.getPlaca());
+                    System.out.println("2 - Estacionamiento #2: " + carro2.getPlaca());
+                    System.out.println("3 - Estacionamiento #3: " + carro3.getPlaca());
+                    System.out.println("4 - Estacionamiento #4: " + carro4.getPlaca());
+                    System.out.println("5 - Estacionamiento #5: " + carro5.getPlaca());
+                    System.out.println(" ");
+
+                    seleccionIngreso = entrada.nextInt();
+
+                    if (seleccionIngreso == 1) {
+                        control = check.ocupado(carro1.getPlaca());
+                        if (control == 2) {
+                            control=0;
+
+                            System.out.println("Cual es la placa del vehiculo?");
+                            placa = entrada.next();
+                            control = check.validar_repetido(placa, carro1.getPlaca(), carro2.getPlaca(), carro3.getPlaca(), carro4.getPlaca(), carro5.getPlaca());
+                            if(control == 2){
+                                carro1.setPlaca(placa);
+                                marca = carro1.ingresoMarca();
+                                carro1.setMarca(marca);
+                                nombre=carro1.ingresoNombre();
+                                carro1.setNombre(nombre);
+                                tel = carro1.ingresoTel();
+                                carro1.setTelefono(tel);
+                            }
+                        }
+                    }
+                    if (seleccionIngreso == 2) {
+                        control = check.ocupado(carro2.getPlaca());
+                        if (control == 2) {
+                            control=0;
+
+                            System.out.println("Cual es la placa del vehiculo?");
+                            placa = entrada.next();
+                            control = check.validar_repetido(placa, carro1.getPlaca(), carro2.getPlaca(), carro3.getPlaca(), carro4.getPlaca(), carro5.getPlaca());
+                            if(control == 2){
+                                carro2.setPlaca(placa);
+                                marca = carro2.ingresoMarca();
+                                carro2.setMarca(marca);
+                                nombre=carro2.ingresoNombre();
+                                carro2.setNombre(nombre);
+                                tel = carro2.ingresoTel();
+                                carro2.setTelefono(tel);
+                            }
+                        }
+                    }
+                    if (seleccionIngreso == 3) {
+                        control = check.ocupado(carro3.getPlaca());
+                        if (control == 2) {
+                            control=0;
+
+                            System.out.println("Cual es la placa del vehiculo?");
+                            placa = entrada.next();
+                            control = check.validar_repetido(placa, carro1.getPlaca(), carro2.getPlaca(), carro3.getPlaca(), carro4.getPlaca(), carro5.getPlaca());
+                            if(control == 2){
+                                carro3.setPlaca(placa);
+                                marca = carro3.ingresoMarca();
+                                carro3.setMarca(marca);
+                                nombre=carro3.ingresoNombre();
+                                carro3.setNombre(nombre);
+                                tel = carro3.ingresoTel();
+                                carro3.setTelefono(tel);
+                            }
+                        }
+                    }
+                    if (seleccionIngreso == 4) {
+                        control = check.ocupado(carro4.getPlaca());
+                        if (control == 2) {
+                            control=0;
+
+                            System.out.println("Cual es la placa del vehiculo?");
+                            placa = entrada.next();
+                            control = check.validar_repetido(placa, carro1.getPlaca(), carro2.getPlaca(), carro3.getPlaca(), carro4.getPlaca(), carro5.getPlaca());
+                            if(control == 2){
+                                carro4.setPlaca(placa);
+                                marca = carro4.ingresoMarca();
+                                carro4.setMarca(marca);
+                                nombre=carro4.ingresoNombre();
+                                carro4.setNombre(nombre);
+                                tel = carro4.ingresoTel();
+                                carro4.setTelefono(tel);
+                            }
+                        }
+                    }
+                    if (seleccionIngreso == 5) {
+                        control = check.ocupado(carro5.getPlaca());
+                        if (control == 2) {
+                            control=0;
+
+                            System.out.println("Cual es la placa del vehiculo?");
+                            placa = entrada.next();
+                            control = check.validar_repetido(placa, carro1.getPlaca(), carro2.getPlaca(), carro3.getPlaca(), carro4.getPlaca(), carro5.getPlaca());
+                            if(control == 2){
+                                carro5.setPlaca(placa);
+                                marca = carro5.ingresoMarca();
+                                carro5.setMarca(marca);
+                                nombre=carro5.ingresoNombre();
+                                carro5.setNombre(nombre);
+                                tel = carro5.ingresoTel();
+                                carro5.setTelefono(tel);
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    System.out.println("--------------COLSULTAR VEHICULO-------------------");
+                    System.out.println(" ");
+                    System.out.println("Cual es la placa del vehiculo que desea buscar");
+                    System.out.println(" ");
+                    placa = entrada.next();
+                    System.out.println(" ");
+
+                    controlConsulta = check.consultar(placa, carro1.getPlaca(), carro2.getPlaca(), carro3.getPlaca(), carro4.getPlaca(), carro5.getPlaca());
+                    if (controlConsulta==0){
+                        System.out.println("el vehiculo no se encuentra en el estacionamiento");
+                    }
+                    if (controlConsulta == 1){
+                        carro1.impresion(carro1.getPlaca(),carro1.getMarca(),carro1.getNombre(),carro1.getTelefono());
+                    }
+                    if (controlConsulta == 2){
+                        carro2.impresion(carro2.getPlaca(),carro2.getMarca(),carro2.getNombre(),carro2.getTelefono());
+                    }
+                    if (controlConsulta == 3){
+                        carro3.impresion(carro3.getPlaca(),carro3.getMarca(),carro3.getNombre(),carro3.getTelefono());
+                    }
+                    if (controlConsulta == 4){
+                        carro4.impresion(carro4.getPlaca(),carro4.getMarca(),carro4.getNombre(),carro4.getTelefono());
+                    }
+                    if (controlConsulta == 5){
+                        carro1.impresion(carro5.getPlaca(),carro5.getMarca(),carro5.getNombre(),carro5.getTelefono());
+                    }
+
+                    break;
+                case 3:
+                    System.out.println("--------------RETIRAR DE PARQUEADERO-------------------");
+                    System.out.println(" Que vehiculo se va a retirar?");
+                    System.out.println("1 - Estacionamiento #1: " + carro1.getPlaca());
+                    System.out.println("2 - Estacionamiento #2: " + carro2.getPlaca());
+                    System.out.println("3 - Estacionamiento #3: " + carro3.getPlaca());
+                    System.out.println("4 - Estacionamiento #4: " + carro4.getPlaca());
+                    System.out.println("5 - Estacionamiento #5: " + carro5.getPlaca());
+                    System.out.println(" ");
+                    seleccionRetiro = entrada.nextInt();
+                    System.out.println(" ");
+
+                    if(seleccionRetiro == 1){
+                        carro1.setNombre(null);
+                        carro1.setTelefono(null);
+                        carro1.setPlaca(null);
+                        carro1.setMarca(null);
+                        System.out.println("vehiculo retirado del parqueadero");
+                    }
+                    if(seleccionRetiro == 2){
+                        carro2.setNombre(null);
+                        carro2.setTelefono(null);
+                        carro2.setPlaca(null);
+                        carro2.setMarca(null);
+                        System.out.println("vehiculo retirado del parqueadero");
+                    }
+                    if(seleccionRetiro == 3){
+                        carro3.setNombre(null);
+                        carro3.setTelefono(null);
+                        carro3.setPlaca(null);
+                        carro3.setMarca(null);
+                        System.out.println("vehiculo retirado del parqueadero");
+                    }
+                    if(seleccionRetiro == 4){
+                        carro4.setNombre(null);
+                        carro4.setTelefono(null);
+                        carro4.setPlaca(null);
+                        carro4.setMarca(null);
+                        System.out.println("vehiculo retirado del parqueadero");
+                    }
+                    if(seleccionRetiro == 5){
+                        carro5.setNombre(null);
+                        carro5.setTelefono(null);
+                        carro5.setPlaca(null);
+                        carro5.setMarca(null);
+                        System.out.println("vehiculo retirado del parqueadero");
+                    }
+                    break;
+
+
+            }
+
+        }
+    }
+}
+
+             
+            </pre>
+        </div>
+      
+    </div>
+    <!--PUNTO NUMERO OCHO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 8</h3>
+
+        <button class="naranja" onclick=esconder(14)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los
+            cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de
+            adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso al curso,
+            consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si fueron aprobados o
+            no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela
+            tiene capacidad máxima de gestionar 8 usuarios en su totalidad.
+        </div>
+        <button class="naranja" onclick=esconder(15)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package ciclos.objects;
+
+                import java.util.Scanner;
+                
+                public class Alumno {
+                    Scanner entrada = new Scanner(System.in);
+                
+                    String nombre = "";
+                    String presentado = "";
+                    String resultado = "";
+                
+                    public String getNombre() {
+                        return nombre;
+                    }
+                
+                    public void setNombre(String nombre) {
+                        this.nombre = nombre;
+                    }
+                
+                    public String getPresentado() {
+                        return presentado;
+                    }
+                
+                    public void setPresentado(String presentado) {
+                        this.presentado = presentado;
+                    }
+                
+                    public String getResultado() {
+                        return resultado;
+                    }
+                
+                    public void setResultado(String resultado) {
+                        this.resultado = resultado;
+                    }
+                
+                    public String inscripcion_nombre() {
+                
+                        System.out.println("Cual es el nombre del Alumno");
+                        nombre = entrada.nextLine();
+                        return nombre;
+                
+                    }
+                
+                    public String inscripcion_presentado() {
+                
+                        System.out.println("Ya presento el examen?");
+                        presentado = entrada.nextLine();
+                        return presentado;
+                
+                    }
+                
+                    public String inscripcion_resultado(String presentado) {
+                        if (presentado.equals("No") || presentado.equals("no") || presentado.equals("NO")) {
+                
+                            System.out.println("Proceso finalizado");
+                            return resultado;
+                        } else {
+                            System.out.println("El examen fue aprobado o reprobado?");
+                            resultado = entrada.nextLine();
+                            System.out.println("Proceso finalizado");
+                            return resultado;
+                        }
+                    }
+                
+                        public void reporte_presentado (String presentado, String nombre){
+                
+                            if (presentado.equals("si") || presentado.equals("SI") || presentado.equals("Si")) {
+                
+                                System.out.println(nombre);
+                
+                            } else System.out.println(" ");
+                        }
+                
+                        public void reporte_resultados (String presentado, String resultado, String nombre){
+                
+                            if (presentado.equals("si") || presentado.equals("SI") || presentado.equals("Si")) {
+                
+                                System.out.println(nombre + "............." + resultado);
+                
+                            } else System.out.println(" ");
+                
+                
+                        }
+                
+                
+                    }
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+            package ciclos;
+
+            import ciclos.objects.Alumno;
+            
+            import java.util.Scanner;
+            
+            public class main {
+                public static void main(String[] args) {
+                    Scanner entrada = new Scanner(System.in);
+                    Alumno usuario1 = new Alumno();
+                    Alumno usuario2 = new Alumno();
+                    Alumno usuario3 = new Alumno();
+                    Alumno usuario4 = new Alumno();
+                    Alumno usuario5 = new Alumno();
+                    Alumno usuario6 = new Alumno();
+                    Alumno usuario7 = new Alumno();
+                    Alumno usuario8 = new Alumno();
+                    int seleccion = 0;
+                    int seleccionIngreso = 0;
+                    String nombre;
+                    String presentado;
+                    String resultado;
+            
+                    while(seleccion !=4) {
+            
+                        System.out.println("----------------EL MAESTRO--------------------");
+                        System.out.println("Seleccione el proceso a realizar:");
+                        System.out.println("");
+                        System.out.println("1. ingreso nuevo alumno");
+                        System.out.println("2. Reporte examenes presentados");
+                        System.out.println("3. Reporte resultados");
+                        System.out.println("4. Salir");
+                        System.out.println("");
+            
+                        seleccion = entrada.nextInt();
+            
+                        switch (seleccion){
+                            case 1:
+                                System.out.println("----------------MENU INSCRIPCION--------------------");
+                                System.out.println("Seleccione el cupo donde va a inscribir el alumno");
+                                System.out.println("");
+                                String i = "";
+                                System.out.println("1. Cupo#1 " + usuario1.getNombre());
+                                System.out.println("2. Cupo#2 " + usuario2.getNombre());
+                                System.out.println("3. Cupo#3 " + usuario3.getNombre());
+                                System.out.println("4. Cupo#4 " + usuario4.getNombre());
+                                System.out.println("5. Cupo#5 " + usuario5.getNombre());
+                                System.out.println("6. Cupo#6 " + usuario6.getNombre());
+                                System.out.println("7. Cupo#7 " + usuario7.getNombre());
+                                System.out.println("8. Cupo#8 " + usuario8.getNombre());
+                                System.out.println("9. Salir ");
+                                System.out.println("");
+            
+                                seleccionIngreso = entrada.nextInt();
+            
+                                if (seleccionIngreso == 1){
+            
+                                    nombre = usuario1.inscripcion_nombre();
+                                    usuario1.setNombre(nombre);
+                                    presentado = usuario1.inscripcion_presentado();
+                                    usuario1.setPresentado(presentado);
+                                    if(usuario1.getPresentado().equals("si") || usuario1.getPresentado().equals("Si")|| usuario1.getPresentado().equals("SI")){
+                                        resultado = usuario1.inscripcion_resultado(usuario1.getPresentado());
+                                        usuario1.setResultado(resultado);
+                                        System.out.println("inscripcion finalizada");
+            
+                                    }
+                                    else System.out.println("inscripcion finalizada");
+                                }
+                                if (seleccionIngreso == 2){
+            
+                                    nombre = usuario2.inscripcion_nombre();
+                                    usuario2.setNombre(nombre);
+                                    presentado = usuario2.inscripcion_presentado();
+                                    usuario2.setPresentado(presentado);
+                                    if(usuario2.getPresentado().equals("si") || usuario2.getPresentado().equals("Si")|| usuario2.getPresentado().equals("SI")){
+                                        resultado = usuario2.inscripcion_resultado(usuario1.getPresentado());
+                                        usuario2.setResultado(resultado);
+                                        System.out.println("inscripcion finalizada");
+            
+                                    }
+                                    else System.out.println("inscripcion finalizada");
+                                }
+                                if (seleccionIngreso == 3){
+            
+                                    nombre = usuario3.inscripcion_nombre();
+                                    usuario3.setNombre(nombre);
+                                    presentado = usuario3.inscripcion_presentado();
+                                    usuario3.setPresentado(presentado);
+                                    if(usuario3.getPresentado().equals("si") || usuario3.getPresentado().equals("Si")|| usuario3.getPresentado().equals("SI")){
+                                        resultado = usuario3.inscripcion_resultado(usuario3.getPresentado());
+                                        usuario3.setResultado(resultado);
+                                        System.out.println("inscripcion finalizada");
+            
+                                    }
+                                    else System.out.println("inscripcion finalizada");
+                                }
+                                if (seleccionIngreso == 4){
+            
+                                    nombre = usuario4.inscripcion_nombre();
+                                    usuario4.setNombre(nombre);
+                                    presentado = usuario4.inscripcion_presentado();
+                                    usuario4.setPresentado(presentado);
+                                    if(usuario4.getPresentado().equals("si") || usuario4.getPresentado().equals("Si")|| usuario4.getPresentado().equals("SI")){
+                                        resultado = usuario4.inscripcion_resultado(usuario4.getPresentado());
+                                        usuario4.setResultado(resultado);
+                                        System.out.println("inscripcion finalizada");
+            
+                                    }
+                                    else System.out.println("inscripcion finalizada");
+                                }
+                                if (seleccionIngreso == 5){
+            
+                                    nombre = usuario5.inscripcion_nombre();
+                                    usuario5.setNombre(nombre);
+                                    presentado = usuario5.inscripcion_presentado();
+                                    usuario5.setPresentado(presentado);
+                                    if(usuario5.getPresentado().equals("si") || usuario5.getPresentado().equals("Si")|| usuario5.getPresentado().equals("SI")){
+                                        resultado = usuario5.inscripcion_resultado(usuario5.getPresentado());
+                                        usuario5.setResultado(resultado);
+                                        System.out.println("inscripcion finalizada");
+            
+                                    }
+                                    else System.out.println("inscripcion finalizada");
+                                }
+                                if (seleccionIngreso == 6){
+            
+                                    nombre = usuario6.inscripcion_nombre();
+                                    usuario6.setNombre(nombre);
+                                    presentado = usuario6.inscripcion_presentado();
+                                    usuario6.setPresentado(presentado);
+                                    if(usuario6.getPresentado().equals("si") || usuario6.getPresentado().equals("Si")|| usuario6.getPresentado().equals("SI")){
+                                        resultado = usuario6.inscripcion_resultado(usuario6.getPresentado());
+                                        usuario6.setResultado(resultado);
+                                        System.out.println("inscripcion finalizada");
+            
+                                    }
+                                    else System.out.println("inscripcion finalizada");
+                                }
+                                if (seleccionIngreso == 7){
+            
+                                    nombre = usuario7.inscripcion_nombre();
+                                    usuario7.setNombre(nombre);
+                                    presentado = usuario7.inscripcion_presentado();
+                                    usuario7.setPresentado(presentado);
+                                    if(usuario7.getPresentado().equals("si") || usuario7.getPresentado().equals("Si")|| usuario7.getPresentado().equals("SI")){
+                                        resultado = usuario7.inscripcion_resultado(usuario7.getPresentado());
+                                        usuario7.setResultado(resultado);
+                                        System.out.println("inscripcion finalizada");
+            
+                                    }
+                                    else System.out.println("inscripcion finalizada");
+                                }
+                                if (seleccionIngreso == 8){
+            
+                                    nombre = usuario8.inscripcion_nombre();
+                                    usuario8.setNombre(nombre);
+                                    presentado = usuario8.inscripcion_presentado();
+                                    usuario8.setPresentado(presentado);
+                                    if(usuario8.getPresentado().equals("si") || usuario8.getPresentado().equals("Si")|| usuario8.getPresentado().equals("SI")){
+                                        resultado = usuario8.inscripcion_resultado(usuario8.getPresentado());
+                                        usuario8.setResultado(resultado);
+                                        System.out.println("inscripcion finalizada");
+            
+                                    }
+                                    else System.out.println("inscripcion finalizada");
+                                }
+            
+                               break;
+            
+                            case 2:
+            
+                                System.out.println("----------------MENU REPORTE PRESENTADOS--------------------");
+                                System.out.println("Los siguientes alumnos han presentado el examen");
+                                usuario1.reporte_presentado(usuario1.getPresentado(),usuario1.getNombre());
+                                usuario2.reporte_presentado(usuario2.getPresentado(),usuario2.getNombre());
+                                usuario3.reporte_presentado(usuario3.getPresentado(),usuario3.getNombre());
+                                usuario4.reporte_presentado(usuario4.getPresentado(),usuario4.getNombre());
+                                usuario5.reporte_presentado(usuario5.getPresentado(),usuario5.getNombre());
+                                usuario6.reporte_presentado(usuario6.getPresentado(),usuario6.getNombre());
+                                usuario7.reporte_presentado(usuario7.getPresentado(),usuario7.getNombre());
+                                usuario8.reporte_presentado(usuario8.getPresentado(),usuario8.getNombre());
+            
+                                break;
+                            case 3:
+                                System.out.println("----------------MENU REPORTE RESULTADOS--------------------");
+                                System.out.println("Restusltados de los examenes presentados");
+                                usuario1.reporte_resultados(usuario1.getPresentado(),usuario1.getResultado(),usuario1.getNombre());
+                                usuario2.reporte_resultados(usuario2.getPresentado(),usuario2.getResultado(),usuario2.getNombre());
+                                usuario3.reporte_resultados(usuario3.getPresentado(),usuario3.getResultado(),usuario3.getNombre());
+                                usuario4.reporte_resultados(usuario4.getPresentado(),usuario4.getResultado(),usuario4.getNombre());
+                                usuario5.reporte_resultados(usuario5.getPresentado(),usuario5.getResultado(),usuario5.getNombre());
+                                usuario6.reporte_resultados(usuario6.getPresentado(),usuario6.getResultado(),usuario6.getNombre());
+                                usuario7.reporte_resultados(usuario7.getPresentado(),usuario7.getResultado(),usuario7.getNombre());
+                                usuario8.reporte_resultados(usuario8.getPresentado(),usuario8.getResultado(),usuario8.getNombre());
+            
+                                break;
+                        }
+            
+            
+            
+                    }
+            
+            
+            
+                }
+            }
+            
+                
+                   
+            </pre>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

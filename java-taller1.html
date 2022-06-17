@@ -1,0 +1,354 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/codigo.js"></script>
+
+
+</head>
+
+<body>
+    <div class="morado">
+        <h1>JAVA - TALLER # 1 VARIABLES</h1>
+        <p>A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que
+            serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil
+            Estricto.</p>
+        <button class="regresar" onclick="window.location.href='index.html';">
+            <b>Volver</b>
+        </button>
+    </div>
+
+    <div class="aguamarina">
+        <h3>PUNTO # 1 </h3>
+
+        <button class="naranja" onclick=esconder(0)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa el cual solicite su nombre y apellidos.
+        </div>
+
+        <button class="naranja" onclick=esconder(1)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package variables.objects;
+
+                import java.util.Scanner;
+
+                public class personas {
+                    String nombre;
+                    String apellido;
+
+                    Scanner entrada = new Scanner(System.in);
+
+                    public void capturador() {
+
+                        System.out.println("Cual es su nombre? ");
+                        nombre = entrada.nextLine();
+                        System.out.println("Cual es su Apellido? ");
+                        apellido = entrada.nextLine();
+                    }
+                }
+    
+              //////////////////////////////////////////////////////////////
+              
+                package variables;
+
+                    import variables.objects.personas;
+
+                    public class main {
+
+                        public static void main(String[] args) {
+                            personas hijo = new personas();
+
+                            hijo.capturador();
+                        }
+                }
+              
+            </pre>
+        </div>
+
+    </div>
+
+    <div class="aguamarina">
+        <h3>PUNTO # 2</h3>
+
+        <button class="naranja" onclick=esconder(2)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa el cual solicite su nombre, apellidos, edad y estatura.
+        </div>
+
+        <button class="naranja" onclick=esconder(3)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                package variables.objects;
+
+                import java.util.Scanner;
+                
+                    public class personas {
+                        String nombre;
+                        String apellido;
+                        int edad;
+                        double estatura;
+                
+                        Scanner entrada = new Scanner(System.in);
+                
+                        public void capturador() {
+                
+                            System.out.println("Cual es su nombre? ");
+                            nombre = entrada.nextLine();
+                            System.out.println("Cual es su Apellido? ");
+                            apellido = entrada.nextLine();
+                            System.out.println("Cual es su edad? ");
+                            edad = entrada.nextInt();
+                            System.out.println("Cual es su estatura? ");
+                            estatura = entrada.nextDouble();
+                
+                
+                        }
+                    }
+            ////////////////////////////////////////////////////////////////////////////////
+
+                  package variables;
+
+                        import variables.objects.personas;
+
+                        public class main {
+                            public static void main(String[] args) {
+                                personas hijo= new personas();
+                                hijo.capturador();
+                            }
+                        }
+
+
+            </pre>
+        </div>
+    
+    </div>
+
+    <div class="aguamarina">
+        <h3>PUNTO # 3</h3>
+
+        <button class="naranja" onclick=esconder(4)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa el cual solicite su nombre y apellidos, también debe capturar nombre y apellidos de su
+            padre y madre. Al finalizar debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo], soy hijo
+            de [Nombre de la Madre] y [Nombre del Padre].
+        </div>
+
+        <button class="naranja" onclick=esconder(5)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package variables.objetos;
+
+                    import java.util.Scanner;
+
+                    public class personas {
+                        String nombre;
+                        String apellido;
+
+                        Scanner entrada = new Scanner(System.in);
+
+                        public String capturador() {
+
+                            System.out.println("Cual es su nombre? ");
+                            nombre = entrada.nextLine();
+                            System.out.println("Cual es su Apellido? ");
+                            apellido = entrada.nextLine();
+
+                            return nombre + " " + apellido;
+                        }
+
+                        public void impresion(String minombre,String mimama, String mipapa){
+                            System.out.println("Yo " + minombre + " soy hijo de " + mimama + " y " + mipapa);
+                        }
+                    } 
+
+            ///////////////////////////////////////////////////////////////////////////////////////           
+         
+            package variables;
+
+                        import variables.objetos.personas;
+
+                        public class main {
+                            public static void main(String[] args) {
+
+                                personas familia = new personas();
+                                System.out.println("mis datos");
+                                String minombre = familia.capturador();
+                                System.out.println("datos mamá");
+                                String mimama = familia.capturador();
+                                System.out.println("datos papá");
+                                String mipapa = familia.capturador();
+
+                                familia.impresion(minombre, mimama, mipapa);
+
+                            }
+                        }
+            </pre>
+        </div>
+ 
+    </div>
+
+    <div class="aguamarina">
+        <h3>PUNTO # 4</h3>
+
+        <button class="naranja" onclick=esconder(6)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa el cual solicite el nombre de una ciudad capital y el país. Al finalizar debe imprimir
+            en pantalla el siguiente mensaje "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del País]
+        </div>
+
+        <button class="naranja" onclick=esconder(7)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                package variables.object;
+
+                import java.util.Scanner;
+                
+                public class capital {
+                    String ciudad;
+                    String pais;
+                
+                    Scanner entrada = new Scanner(System.in);
+                
+                    public void repuesta() {
+                
+                        System.out.println("Nombra una Ciudad");
+                        ciudad = entrada.nextLine();
+                        System.out.println("Esta ciudad es la Capital que país");
+                        pais = entrada.nextLine();
+                
+                        System.out.println("la ciudad de " + ciudad + ", es la capital del país " + pais);
+                    }
+                }
+            
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                package variables;
+
+                import variables.object.capital;
+                
+                public class main {
+                    public static void main(String[] args) {
+                
+                        capital Capital = new capital();
+                
+                        Capital.repuesta();
+                
+                    }
+                }
+ 
+            </pre>
+        </div>
+
+
+    </div>
+
+    <div class="aguamarina">
+        <h3>PUNTO # 5</h3>
+
+        <button class="naranja" onclick=esconder(8)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa el cual solicite el nombre de su mascota, edad de la mascota, el tipo de mascota y su
+            nombre completo. Al finalizar el sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de
+            Mascota] es un(a) [Tipo de Mascota], el cual, tiene [Edad de la Mascota] años de edad y [Nombre Completo] es
+            actualmente su dueño(a). </div>
+
+        <button class="naranja" onclick=esconder(9)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                package variables.objects;
+
+                import java.util.Scanner;
+                
+                public class mascota {
+                    String nombre;
+                    String tipo;
+                    String edad;
+                    String dueno;
+                
+                    Scanner entrada = new Scanner(System.in);
+                
+                    public void impresion() {
+                
+                        System.out.println("Cual es el nombre de la mascota");
+                        nombre = entrada.nextLine();
+                        System.out.println("Cual es el tipo de mascota");
+                        tipo = entrada.nextLine();
+                        System.out.println("Cual es la edad de la mascota");
+                        edad = entrada.nextLine();
+                        System.out.println("Cual es el nombre de su Dueño");
+                        dueno = entrada.nextLine();
+                
+                        System.out.println(nombre + " es un(a) " + tipo + ", el cual, tiene " + edad + " años de edad y " + dueno + " es actualmente su dueño(a).");
+                
+                    }
+                }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+               
+                            package variables;
+
+                            import variables.objects.mascota;
+                            
+                            public class main {
+                                public static void main(String[] args) {
+                                    mascota sasha = new mascota();
+                            
+                                    sasha.impresion();
+                                }
+                            }
+
+            </pre>
+        </div>
+
+        
+    </div>
+
+
+
+</body>
+
+</html>

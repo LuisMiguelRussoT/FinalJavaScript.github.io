@@ -1,0 +1,1354 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./js/codigo.js"></script>
+
+
+</head>
+
+<body>
+    <div class="morado">
+        <h1>JAVA - TALLER # 2 CONDICIONALES</h1>
+        <p>A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que
+            serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil
+            Estricto.</p>
+        <button class="regresar" onclick="window.location.href='index.html';">
+            <b>Volver</b>
+        </button>
+    </div>
+    <!--PUNTO NUMERO UNO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 1 </h3>
+
+        <button class="naranja" onclick=esconder(0)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18
+            años, deberá mostrar en pantalla: Usted es mayor de edad.
+        </div>
+
+        <button class="naranja" onclick=esconder(1)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package condicionales.objects;
+
+                public class validar {
+
+                    int edad;
+
+                    public void condicional(int edad) {
+
+                        if (edad >= 18) {
+                            System.out.println("Usted es mayor de edad");
+                        }
+                    }
+                }    
+         
+
+            </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO DOS -->
+    <div class="aguamarina">
+        <h3>PUNTO # 2</h3>
+
+        <button class="naranja" onclick=esconder(2)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años, deberá
+            mostrar en pantalla: Usted aún es un niño(a).
+        </div>
+
+        <button class="naranja" onclick=esconder(3)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+                package condicionales.objects;
+
+                public class validador {
+                
+                    int edad;
+                
+                    public void condicional(int edad) {
+                
+                        if (edad < 18) {
+                            System.out.println("Usted aún es un niño(a)");
+                        }
+                    }
+                }
+
+                ///////////////////////////////////////////////////////////////
+            </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO TRES -->
+    <div class="aguamarina">
+        <h3>PUNTO # 3</h3>
+
+        <button class="naranja" onclick=esconder(4)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es
+            mayor o igual a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de edad,
+            por lo tanto puede entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces, deberá
+            imprimirse el siguiente mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no puede entrar a
+            la fiesta, por favor devuélvase a su casa. </div>
+
+        <button class="naranja" onclick=esconder(5)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package condicionales.objects;
+
+                    public class paseFiesta {
+
+                        public void control_entrada(String nombre, int edad) {
+                            if(edad>=18){
+
+                                System.out.println(nombre +" usted es mayor de edad, por lo tanto puede entrar a la fiesta.");
+                            }
+                            if (edad <18){
+
+                                System.out.println(nombre + " usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.");
+                            }
+                        }
+
+                    }
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                                    package condicionales;
+
+                        import condicionales.objects.paseFiesta;
+
+                        import java.util.Scanner;
+
+                        public class main {
+
+                            public static void main(String[] args) {
+                                int edad;
+                                String nombre;
+
+                                Scanner entrada = new Scanner(System.in);
+
+                                System.out.println("Cual es su nombre? ");
+                                nombre = entrada.nextLine();
+                                System.out.println("Cual es su edad? ");
+                                edad = entrada.nextInt();
+
+                                paseFiesta control = new paseFiesta();
+                                control.control_entrada(nombre, edad);
+                            }
+                        }
+                 
+            </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO CUATRO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 4</h3>
+
+        <button class="naranja" onclick=esconder(6)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir,
+            requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus usuarios.
+            Para cada usuario se debe permitir la opción de alquilar película, consultar películas disponibles y recibir
+            película en la video tienda con la opción de realizar anotaciones sobre estas si se llegan a presentar daños
+            u otra novedad sobre la película. </div>
+
+        <button class="naranja" onclick=esconder(7)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package condicionales.objects;
+
+                import java.util.Scanner;
+                
+                public class pelicula {
+                    Scanner entrada = new Scanner(System.in);
+                
+                
+                    public void alquilar ( String nombre[]){
+                        int seleccion;
+                
+                        System.out.println("------------DISPONIBLES-------------");
+                        System.out.println(" ");
+                        System.out.println("1. Spiderman");
+                        System.out.println("2. Hombres de Negro");
+                        System.out.println("3. Jurasic Park");
+                        System.out.println("4. Batman");
+                        System.out.println(" ");
+                        seleccion = entrada.nextInt();
+                
+                        System.out.println("le ha completado el proceso para el alquiler");
+                        System.out.println("de la pelicula " + nombre[seleccion-1] );
+                
+                
+                    }
+                
+                    public void devolver (){
+                        String estado;
+                        int respuesta;
+                        System.out.println("------------DEVOLUCION-------------");
+                        System.out.println(" ");
+                        System.out.println("La pelicula presenta alguna novedad");
+                        System.out.println("1. si");
+                        System.out.println("2. no");
+                        respuesta = entrada.nextInt();
+                        System.out.println(" ");
+                        if (respuesta == 1){
+                            System.out.println("Que novedad tiene la pelicula");
+                            entrada.skip("\n");
+                            estado= entrada.nextLine();
+                            System.out.println("Novedad guardada: "+ estado+" proceso completado" );
+                        }
+                
+                        if (respuesta == 2){
+                            System.out.println("Pelicula devuelta exitosamente");
+                        }
+                
+                
+                    }
+                
+                
+                }     
+           //////////////////////////////////////////////////////////////////////////////////////////////////////////
+           
+                         package condicionales;
+
+                        import condicionales.objects.pelicula;
+
+                        import java.util.Scanner;
+
+                        public class main {
+
+                            public static void main (String[] args) {
+
+                                Scanner entrada = new Scanner(System.in);
+                                int seleccionUsuario;
+                                String[] nombrePeli;
+                                nombrePeli = new String[4];
+
+                                nombrePeli[0] = "Spiderman";
+                                nombrePeli[1] = "Hombres de Negro";
+                                nombrePeli[2] = "Jurasic Park";
+                                nombrePeli[3] = "Batman";
+
+                                pelicula Pelicula = new pelicula();
+
+                                System.out.println("---------------------VIDEO TIENDA-------------------------");
+                                System.out.println("Que proceso va a realizar");
+                                System.out.println(" ");
+                                System.out.println("1. Alquilar pelicula");
+                                System.out.println("2. Devolver pelicula");
+                                System.out.println(" ");
+
+                                seleccionUsuario = entrada.nextInt();
+
+                                if (seleccionUsuario == 1){
+                                    Pelicula.alquilar(nombrePeli);
+                                }
+                                if (seleccionUsuario == 2){
+                                    Pelicula.devolver();
+
+                                }
+                            }
+                        }
+
+            </pre>
+          
+     </div>
+   
+    </div>
+    <!--PUNTO NUMERO CINCO -->
+    <div class="aguamarina">
+        <h3>PUNTO # 5</h3>
+
+        <button class="naranja" onclick=esconder(8)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder facturar los productos que vende a sus clientes y para ello, los productos tienen unas características que deben indicársele al cliente para que pueda escoger el producto a comprar. Para cada cliente, se tienen las opciones de compra de producto, consulta de precios por producto y devoluciones en caso de que se presenten. </div>
+
+        <button class="naranja" onclick=esconder(9)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+
+            package condicionales.objects;
+
+                    import java.util.Scanner;
+
+                    public class producto {
+                    Scanner entrada = new Scanner(System.in);
+
+                        String subtipo_1;
+                        String subtipo_2;
+                        String precio_1;
+                        String precio_2;
+
+
+                        public String getSubtipo_1() {
+                            return subtipo_1;
+                        }
+
+                        public void setSubtipo_1(String subtipo_1) {
+                            this.subtipo_1 = subtipo_1;
+                        }
+
+                        public String getSubtipo_2() {
+                            return subtipo_2;
+                        }
+
+                        public void setSubtipo_2(String subtipo_2) {
+                            this.subtipo_2 = subtipo_2;
+                        }
+
+                        public String getPrecio_1() {
+                            return precio_1;
+                        }
+
+                        public void setPrecio_1(String precio_1) {
+                            this.precio_1 = precio_1;
+                        }
+
+                        public String getPrecio_2() {
+                            return precio_2;
+                        }
+
+                        public void setPrecio_2(String precio_2) {
+                            this.precio_2 = precio_2;
+                        }
+
+                        public void venta (int apuntador){
+                            apuntador = 0;
+                            System.out.println("Que presentacion deseas ordenar:");
+                            System.out.println("1. " + subtipo_1 + "...." + precio_1 );
+                            System.out.println("2. " + subtipo_2 + "...." + precio_2 );
+                            System.out.println(" ");
+                            apuntador = entrada.nextInt();
+                            System.out.println(" ");
+                            System.out.println("Puede pasar a ventanilla por su producto ");
+                        }
+
+                        public void devolucion (int apuntador) {
+
+                            System.out.println("que producto vas a devolver?");
+                            System.out.println("1. " + subtipo_1 + "...." + precio_1 );
+                            System.out.println("2. " + subtipo_2 + "...." + precio_2 );
+                            System.out.println(" ");
+                            apuntador = entrada.nextInt();
+                            System.out.println(" ");
+                            System.out.println("Puede pasar a la zona de devoluciones ");
+
+
+                        }
+                    }
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                    package condicionales;
+
+                    import condicionales.objects.producto;
+                    
+                    import java.util.Scanner;
+                    
+                    public class main {
+                        public static void main(String[] args) {
+                            Scanner entrada = new Scanner(System.in);
+                            int seleccion;
+                            int seleccionVenta;
+                            int seleccionDevolcion;
+                    
+                            producto dolex = new producto();
+                            producto pedialite = new producto();
+                            producto buscapina = new producto();
+                    
+                            dolex.setSubtipo_1("unidad");
+                            dolex.setSubtipo_2("Tabletas x 12");
+                            dolex.setPrecio_1("$ 500");
+                            dolex.setPrecio_2("$ 3.800");
+                    
+                            pedialite.setSubtipo_1("500 ml");
+                            pedialite.setSubtipo_2("1000 ml");
+                            pedialite.setPrecio_1("$ 5.000");
+                            pedialite.setPrecio_2("$ 8.500");
+                    
+                            buscapina.setSubtipo_1("unidad");
+                            buscapina.setSubtipo_2("Tabletas x 12");
+                            buscapina.setPrecio_1("$ 800");
+                            buscapina.setPrecio_2("$ 9.800");
+                    
+                            System.out.println("------------------DROGUERIA--------------");
+                            System.out.println("Que proceso realizaras? :");
+                            System.out.println("1. Comprar");
+                            System.out.println("2. Devolver");
+                            seleccion = entrada.nextInt();
+                            System.out.println("  ");
+                    
+                            if(seleccion == 1){
+                    
+                                System.out.println("------Seleciona tu producto------------ ");
+                                System.out.println("1. Dolex Gripa");
+                                System.out.println("2. Pedialite");
+                                System.out.println("3. Buscapina Fem");
+                                System.out.println(" ");
+                                seleccionVenta = entrada.nextInt();
+                    
+                                switch (seleccionVenta){
+                                case 1:
+                                    dolex.venta(seleccionVenta);
+                                break;
+                    
+                                case 2:
+                                    pedialite.venta(seleccionVenta);
+                                break;
+                    
+                                case 3:
+                                    buscapina.venta(seleccionVenta);
+                                break;
+                                }
+                            }
+                            if(seleccion == 2){
+                                System.out.println("------Devolucion de Producto------------ ");
+                                System.out.println("1. Dolex Gripa");
+                                System.out.println("2. Pedialite");
+                                System.out.println("3. Buscapina Fem");
+                                System.out.println(" ");
+                                seleccionDevolcion = entrada.nextInt();
+                                switch (seleccionDevolcion){
+                                    case 1:
+                                        dolex.devolucion(seleccionDevolcion);
+                                        break;
+                    
+                                    case 2:
+                                        pedialite.devolucion(seleccionDevolcion);
+                                        break;
+                    
+                                    case 3:
+                                        buscapina.devolucion(seleccionDevolcion);
+                                        break;
+                                }
+                    
+                            }
+                    
+                    
+                        }
+                    
+                    
+                    }
+        
+
+
+
+
+            </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO SEIS -->
+    <div class="aguamarina">
+        <h3>PUNTO # 6</h3>
+
+        <button class="naranja" onclick=esconder(10)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas revisiones y requiere una aplicación que le permita registrar los servicios generados a sus clientes. Para cada motocicleta se debe tener registro del ingreso al taller y las observaciones por parte del cliente. También debe existir registro de salida del taller con las novedades y otra de arreglos hechos por el mecánico en caso de que se requiera inventariar cambios repuestos en la motocicleta al entregarla.
+        </div>
+
+        <button class="naranja" onclick=esconder(11)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package condicionales.objects;
+
+                import java.util.Scanner;
+                
+                public class moto {
+                    Scanner entrada = new Scanner(System.in);
+                    String modelo;
+                    String cc;
+                    String ingreso;
+                    String ComentariosCliente;
+                    String salida;
+                    String Novedades;
+                
+                    public String getModelo() {
+                        return modelo;
+                    }
+                
+                    public void setModelo(String modelo) {
+                        this.modelo = modelo;
+                    }
+                
+                    public String getCc() {
+                        return cc;
+                    }
+                
+                    public void setCc(String cc) {
+                        this.cc = cc;
+                    }
+                
+                    public String getIngreso() {
+                        return ingreso;
+                    }
+                
+                    public void setIngreso(String ingreso) {
+                        this.ingreso = ingreso;
+                    }
+                
+                    public String getComentariosCliente() {
+                        return ComentariosCliente;
+                    }
+                
+                    public void setComentariosCliente(String comentariosCliente) {
+                        ComentariosCliente = comentariosCliente;
+                    }
+                
+                    public String getSalida() {
+                        return salida;
+                    }
+                
+                    public void setSalida(String salida) {
+                        this.salida = salida;
+                    }
+                
+                    public String getNovedades() {
+                        return Novedades;
+                    }
+                
+                    public void setNovedades(String novedades) {
+                        Novedades = novedades;
+                    }
+                
+                    public void recepcion(){
+                
+                        System.out.println("--------- MENU INGRESO--------");
+                        System.out.println("Modelo de la moto:");
+                        modelo = entrada.next();
+                
+                        System.out.println("Cilintraje de la moto:");
+                        cc = entrada.next();
+                
+                        System.out.println("Fecha de ingreso:");
+                        ingreso = entrada.next();
+                
+                        System.out.println("Comentarios Cliente");
+                        ComentariosCliente = entrada.next();
+                
+                        System.out.println("su moto ha sido recibida exitosamente");
+                
+                    }
+                
+                    public void entrega(){
+                
+                        System.out.println("--------- MENU SALIDA--------");
+                
+                        System.out.println("Modelo de la moto:");
+                        modelo = entrada.next();
+                
+                        System.out.println("Cilintraje de la moto:");
+                        cc = entrada.next();
+                
+                        System.out.println("Fecha de salida:");
+                        ingreso = entrada.next();
+                
+                        System.out.println("Novedades:");
+                        ComentariosCliente = entrada.next();
+                
+                        System.out.println("moto entregada satisfactoriamente");
+                
+                    }
+                
+                }
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        package condicionales;
+
+        import condicionales.objects.moto;
+        
+        import java.util.Scanner;
+        
+        public class main {
+            public static void main(String[] args) {
+        
+                Scanner entrada = new Scanner(System.in);
+        
+                int seleccion;
+        
+                moto Moto = new moto();
+        
+        
+                System.out.println("--------- TALLER EL MAQUINISTA--------");
+                System.out.println("Bienvenido al siste seleccione que desea realzar: ");
+                System.out.println("1. ingreso motocicleta");
+                System.out.println("2. salida motocicleta");
+                System.out.println("");
+                seleccion = entrada.nextInt();
+        
+                if(seleccion ==1){
+                    Moto.recepcion();
+                }
+                if(seleccion ==2){
+                    Moto.entrega();
+        
+                }
+
+            }
+        }
+      
+        
+
+            </pre>
+        </div>
+
+    </div>
+    <!--PUNTO NUMERO SIETE -->
+    <div class="aguamarina">
+        <h3>PUNTO # 7</h3>
+
+        <button class="naranja" onclick=esconder(12)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de masa corporal) y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada adicional a los datos suministrados, debe mostrar el resultado para cada uno y establecer en qué rango se encuentra (bajo peso, normal, sobrepeso y obeso).
+        </div>
+        <button class="naranja" onclick=esconder(13)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+   
+            <pre class=" pre-scrollable">
+                package condicionales.objects;
+
+                public class persona {
+                    int peso;
+                    double estatura;
+                    double icm;
+                    String estado;
+                
+                
+                    public String getEstado() {
+                        return estado;
+                    }
+                
+                    public void setEstado(String estado) {
+                        this.estado = estado;
+                    }
+                
+                    public int getPeso() {
+                        return peso;
+                    }
+                
+                    public void setPeso(int peso) {
+                        this.peso = peso;
+                    }
+                
+                    public double getEstatura() {
+                        return estatura;
+                    }
+                
+                    public void setEstatura(double estatura) {
+                        this.estatura = estatura;
+                    }
+                
+                    public double getIcm() {
+                        return icm;
+                    }
+                
+                    public void setIcm(double icm) {
+                        this.icm = icm;
+                    }
+                
+                    public double calculoIcm (int peso,double estatura){
+                        double resultado;
+                
+                        resultado = peso / (estatura*estatura);
+                
+                        return resultado;
+                    }
+                
+                    public String estado (double icm){
+                
+                
+                        if(icm < 18.5){
+                            estado = "bajo de peso";
+                        }
+                        if(icm >= 18.5 & icm < 24.9){
+                            estado = "normal";
+                        }
+                        if(icm >= 24.9 & icm <29.9){
+                            estado = "sobrepeso";
+                
+                        }
+                        if(icm >= 29.9){
+                            estado = "obsidad";
+                        }
+                
+                        return estado;
+                    }
+       
+                }
+                 
+         //////////////////////////////////////////////////////////////////////////////////////////       
+              
+         package condicionales;
+
+         import condicionales.objects.persona;
+         
+         import java.util.Scanner;
+         
+         public class main {
+             public static void main(String[] args) {
+                 Scanner entrada = new Scanner(System.in);
+         
+                 persona usuario_1 = new persona();
+                 persona usuario_2 = new persona();
+         
+                 int peso;
+                 double estatura;
+                 double icm;
+                 String rango;
+         
+         
+                 System.out.println("----------------CALCULAR ICM-----------------");
+                 System.out.println(" ");
+                 System.out.println("----------------DATOS USUARIO 1-----------------");
+                 System.out.println("ingrese el peso ");
+                 peso = entrada.nextInt();
+                 usuario_1.setPeso(peso);
+                 System.out.println("ingrese la estatura");
+                 System.out.println(" ");
+                 estatura = entrada.nextDouble();
+                 usuario_1.setEstatura(estatura);
+         
+                 System.out.println("----------------DATOS USUARIO 2-----------------");
+                 System.out.println("ingrese el peso ");
+                 peso = entrada.nextInt();
+                 usuario_2.setPeso(peso);
+                 System.out.println("ingrese la estatura");
+                 System.out.println(" ");
+                 estatura = entrada.nextDouble();
+                 usuario_2.setEstatura(estatura);
+         
+                 System.out.println("----------------CALCULO ICM-----------------");
+         
+                 icm = usuario_1.calculoIcm(usuario_1.getPeso(),usuario_1.getEstatura());
+                 usuario_1.setIcm(icm);
+                 rango=usuario_1.estado(icm);
+                 usuario_1.setEstado(rango);
+                 System.out.println("Usuario 1 tiene un icm de " + String.format("%.2f", usuario_1.getIcm()) + " y su rango de peso es : " + usuario_1.getEstado() );
+         
+                 icm = usuario_2.calculoIcm(usuario_2.getPeso(),usuario_2.getEstatura());
+                 usuario_2.setIcm(icm);
+                 rango=usuario_2.estado(icm);
+                 usuario_2.setEstado(rango);
+                 System.out.println("Usuario 2 tiene un icm de " + String.format("%.2f", usuario_2.getIcm()) + " y su rango de peso es : " + usuario_2.getEstado() );
+         
+         
+             }
+     
+             }
+       
+            </pre>
+        </div>
+
+    </div>
+
+     <!--PUNTO NUMERO OCHO -->
+     <div class="aguamarina">
+        <h3>PUNTO # 8</h3>
+
+        <button class="naranja" onclick=esconder(14)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas características propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación permita registrar los pedidos, las tortas disponibles y las ventas que se registren diariamente.
+        </div>
+        <button class="naranja" onclick=esconder(15)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package condicionales.objects;
+
+                        public class tortas {
+
+                            String sabor;
+                            String porciones;
+                            String decoraciones;
+
+
+                            public String getSabor() {
+                                return sabor;
+                            }
+
+                            public void setSabor(String sabor) {
+                                this.sabor = sabor;
+                            }
+
+                            public String getPorciones() {
+                                return porciones;
+                            }
+
+                            public void setPorciones(String porciones) {
+                                this.porciones = porciones;
+                            }
+
+                            public String getDecoraciones() {
+                                return decoraciones;
+                            }
+
+                            public void setDecoraciones(String decoraciones) {
+                                this.decoraciones = decoraciones;
+                            }
+                        }
+             ///////////////////////////////////////////////////////////////////////////////////////////
+             
+             package condicionales;
+
+                        import condicionales.objects.tortas;
+
+                        import java.util.Scanner;
+
+                        public class main {
+
+                            public static void main(String[] args) {
+
+                                Scanner entrada = new Scanner(System.in);
+                                tortas pastel = new tortas();
+
+                                String flavor;
+                                String amount;
+                                String deco;
+
+
+                                System.out.println("-------------TOMA PEDIDOS------------------");
+
+                                System.out.println("de que sabor desea el pastel?");
+                                flavor = entrada.nextLine();
+                                pastel.setSabor(flavor);
+
+                                System.out.println("Cuantas porciones requeire?");
+                                amount = entrada.nextLine();
+                                pastel.setPorciones(amount);
+
+                                System.out.println("Que tipo de decoraciones requieres");
+                                deco = entrada.nextLine();
+                                pastel.setDecoraciones(deco);
+
+                                if (pastel.getSabor() != "" & pastel.getPorciones() != "" & pastel.getDecoraciones() != ""){
+
+                                    System.out.println("Su pastel de sabor " + pastel.getSabor() + " y de " + pastel.getPorciones() + " porciones" );
+                                    System.out.println("con decorado para un  " + pastel.getDecoraciones() + ", Sera entregado en las siguientes 24 horas" );
+                                }
+                                else{
+                                    System.out.println("debe incluir toda la informacion para poder aceptar el pedido");
+                                }
+
+                            }
+                        }
+                                      
+            </pre>
+        </div>
+
+    </div>
+
+      <!--PUNTO NUMERO NUEVE -->
+      <div class="aguamarina">
+        <h3>PUNTO # 9</h3>
+
+        <button class="naranja" onclick=esconder(16)>
+            <h3>ENUNCIADO</h3>
+        </button>
+
+        <div class="enunciado">
+            El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de diferentes figuras geométricas, para ello requiere una aplicación que le facilite el ejercicio solicitándole los valores al estudiante. La aplicación debe permitir que el estudiante seleccione si desea calcular el área de un rectángulo, triángulo o trapecio. No olvide solicitar los datos necesarios para realizar cada cálculo y mostrar su respectivo resultado.
+        </div>
+        <button class="naranja" onclick=esconder(17)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package condicionales.objects;
+
+                public class rectangulo {
+                
+                    // b * h
+                
+                    int base;
+                    int altura;
+                    double area;
+                
+                    public int getBase() {
+                        return base;
+                    }
+                
+                    public void setBase(int base) {
+                        this.base = base;
+                    }
+                
+                    public int getAltura() {
+                        return altura;
+                    }
+                
+                    public void setAltura(int altura) {
+                        this.altura = altura;
+                    }
+                
+                    public double area (int base, int altura){
+                
+                        area = base * altura;
+                
+                        return area;
+                    }
+                
+                }
+          ////////////////////////////////////////////////////////////////////////////////////////////         
+
+          package condicionales.objects;
+
+                        public class trapecio {
+
+                            // (BM + bm)*h ) /2
+
+                            int baseMayor;
+                            int baseMenor;
+                            int altura;
+                            double area;
+
+                            public int getBaseMayor() {
+                                return baseMayor;
+                            }
+
+                            public void setBaseMayor(int baseMayor) {
+                                this.baseMayor = baseMayor;
+                            }
+
+                            public int getBaseMenor() {
+                                return baseMenor;
+                            }
+
+                            public void setBaseMenor(int baseMenor) {
+                                this.baseMenor = baseMenor;
+                            }
+
+                            public double getArea() {
+                                return area;
+                            }
+
+                            public void setArea(double area) {
+                                this.area = area;
+                            }
+
+                            public int getAltura() {
+                                return altura;
+                            }
+
+                            public void setAltura(int altura) {
+                                this.altura = altura;
+                            }
+
+                            public double area (int baseMayor, int baseMenor, int altura){
+
+                                area = ((baseMenor + baseMayor) * altura) /2;
+
+                                return area;
+                            }
+                        }
+
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        
+                 package condicionales.objects;
+
+                                public class triangulo {
+
+                                    //( b * h ) /2
+                                    int base;
+                                    int altura;
+                                    double area;
+
+                                    public int getBase() {
+                                        return base;
+                                    }
+
+                                    public void setBase(int base) {
+                                        this.base = base;
+                                    }
+
+                                    public int getAltura() {
+                                        return altura;
+                                    }
+
+                                    public void setAltura(int altura) {
+                                        this.altura = altura;
+                                    }
+
+                                    public double area (int base, int altura){
+
+                                        area = (base * altura)/2;
+
+                                        return area;
+                                    }
+                                }
+
+      //////////////////////////////////////////////////////////////////////////////////////////////
+
+      package condicionales;
+
+      import condicionales.objects.rectangulo;
+      import condicionales.objects.trapecio;
+      import condicionales.objects.triangulo;
+      
+      import java.util.Scanner;
+      
+      public class main {
+      
+          public static void main(String[] args) {
+      
+              Scanner entrada = new Scanner(System.in);
+      
+              int seleccion;
+              double area;
+              int base;
+              int altura;
+      
+              System.out.println("---------------CALCULADORA AREA-----------------");
+              System.out.println("De que figura hallaremos el area:");
+              System.out.println("1. rectangulo");
+              System.out.println("2. triangulo");
+              System.out.println("3. trapecio");
+              System.out.println(" ");
+      
+              seleccion = entrada.nextInt();
+      
+              rectangulo Rectangulo = new rectangulo();
+              triangulo Triangulo = new triangulo();
+              trapecio Trapecio = new trapecio();
+      
+              if (seleccion == 1){
+                  System.out.println("---------AREA RECTANGULO---------------");
+                  System.out.println("Ingrese la longuitud de la base:");
+                  base = entrada.nextInt();
+                  Rectangulo.setBase(base);
+                  System.out.println("Ingrese la longuitud de la altura:");
+                  altura = entrada.nextInt();
+                  Rectangulo.setAltura(altura);
+                  area = Rectangulo.area(Rectangulo.getBase(), Rectangulo.getAltura());
+                  System.out.println("el area de la figura es "+ area + " m2");
+              }
+      
+              if (seleccion == 2){
+      
+                  System.out.println("---------AREA TRIANGULO---------------");
+                  System.out.println("Ingrese la longuitud de la base:");
+                  base = entrada.nextInt();
+                  Triangulo.setBase(base);
+                  System.out.println("Ingrese la longuitud de la altura:");
+                  altura = entrada.nextInt();
+                  Triangulo.setAltura(altura);
+                  area = Triangulo.area(Triangulo.getBase(), Triangulo.getAltura());
+                  System.out.println("el area de la figura es "+ area + " m2");
+      
+              }
+      
+              if (seleccion == 3){
+                  System.out.println("---------AREA TRAPECIO---------------");
+                  System.out.println("Ingrese la longuitud de la base menor:");
+                  base = entrada.nextInt();
+                  Trapecio.setBaseMenor(base);
+                  System.out.println("Ingrese la longuitud de la base mayor:");
+                  base = entrada.nextInt();
+                  Trapecio.setBaseMayor(base);
+                  System.out.println("Ingrese la longuitud de la altura:");
+                  altura = entrada.nextInt();
+                  Trapecio.setAltura(altura);
+                  area = Trapecio.area(Trapecio.getBaseMayor(),Trapecio.getBaseMenor(),Trapecio.getAltura());
+                  System.out.println("el area de la figura es "+ area + " m2");
+      
+              }
+      
+          }
+      }
+                                                     
+            </pre>
+        </div>
+
+    </div>
+
+       <!--PUNTO NUMERO DIEZ -->
+       <div class="aguamarina">
+        <h3>PUNTO # 10</h3>
+
+        <button class="naranja" onclick=esconder(18)>
+            <h3>ENUNCIADO</h3>
+        </button>
+        <div class="enunciado">
+        El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación para llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser mayor al valor que tiene en la cuenta.
+        
+        </div>
+        <button class="naranja" onclick=esconder(19)>
+            <h3>CODIGO</h3>
+
+        </button>
+
+        <div class="enunciado">
+            <pre class=" pre-scrollable">
+                package condicionales.objects;
+
+                        public class cliente {
+
+                            String nombre;
+                            int saldoInicial;
+                            int saldo;
+                            int monto;
+
+                            public String getNombre() {
+                                return nombre;
+                            }
+
+                            public void setNombre(String nombre) {
+                                this.nombre = nombre;
+                            }
+
+                            public int getSaldoInicial() {
+                                return saldoInicial;
+                            }
+
+                            public void setSaldoInicial(int saldoInicial) {
+                                this.saldoInicial = saldoInicial;
+                            }
+
+                            public int getSaldo() {
+                                return saldo;
+                            }
+
+                            public void setSaldo(int saldo) {
+                                this.saldo = saldo;
+                            }
+
+                            public int getMonto() {
+                                return monto;
+                            }
+
+                            public void setMonto(int monto) {
+                                this.monto = monto;
+                            }
+
+                            public int ingresos(int monto, int saldo, int saldoInicial){
+
+                                if(monto > 0){
+                                saldo = saldoInicial + monto;
+
+                                    System.out.println("Transaccion realizada, su nuevo saldo es: " + saldo);
+                                }
+                                else {
+
+                                    System.out.println("solo se permiten ingresos de cantidades positivas");
+                                }
+
+                            return saldo;
+                            }
+
+                            public int retiros(int saldoInicial, int monto){
+
+                                if(monto < saldoInicial) {
+                                    saldo = saldoInicial - monto;
+                                    System.out.println("se ha realizado el retiro de por " + monto);
+                                    System.out.println("su nuevo saldo es " + saldo);
+                                }
+                                else{
+                                    System.out.println("fondos insuficientes");
+                                }
+                                return saldo;
+                            }
+
+                            public void consultar(int saldo){
+
+                                System.out.println("su saldo es "+ saldo);
+                            }
+
+                        }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                        package condicionales;
+
+                        import condicionales.objects.cliente;
+                        
+                        import java.util.Scanner;
+                        
+                        public class main {
+                        
+                            public static void main(String[] args) {
+                                Scanner entrada = new Scanner(System.in);
+                                int seleccion;
+                                int seleccionIngreso;
+                                int seleccionRetiro;
+                                int seleccionConsulta;
+                                int monto;
+                                cliente usuario_1 = new cliente();
+                                cliente usuario_2 = new cliente();
+                                cliente usuario_3 = new cliente();
+                        
+                                usuario_1.setNombre("miguel russo");
+                                usuario_2.setNombre("carlos perez");
+                                usuario_3.setNombre("david murica");
+                        
+                                usuario_1.setSaldoInicial(1000000);
+                                usuario_2.setSaldoInicial(2000000);
+                                usuario_3.setSaldoInicial(3000000);
+                        
+                        
+                                System.out.println("---------SU BANCO FIEL-------------");
+                                System.out.println("en que te podemos ayudar?");
+                                System.out.println("1. Consignaciones");
+                                System.out.println("2. retiros");
+                                System.out.println("3. consulta de saldo");
+                                System.out.println(" ");
+                                seleccion = entrada.nextInt();
+                        
+                                switch (seleccion){
+                        
+                                    case 1:
+                                        System.out.println("---------MENU CONSIGNACIONES-------------");
+                                        System.out.println("Que usuario va a realizar la transaccion?");
+                                        System.out.println("1. " + usuario_1.getNombre());
+                                        System.out.println("2. "+ usuario_2.getNombre());
+                                        System.out.println("3. "+ usuario_3.getNombre());
+                                        System.out.println(" ");
+                                        seleccionIngreso = entrada.nextInt();
+                        
+                                        if(seleccionIngreso == 1){
+                                            System.out.println("Cual es el monto a consignar?");
+                                            monto = entrada.nextInt();
+                                            usuario_1.ingresos(monto, usuario_1.getSaldo(), usuario_1.getSaldoInicial());
+                                        }
+                        
+                                        if(seleccionIngreso == 2){
+                                            System.out.println("Cual es el monto a consignar?");
+                                            monto = entrada.nextInt();
+                                            usuario_2.ingresos(monto, usuario_2.getSaldo(), usuario_2.getSaldoInicial());
+                                        }
+                        
+                                        if(seleccionIngreso == 3){
+                                            System.out.println("Cual es el monto a consignar?");
+                                            monto = entrada.nextInt();
+                                            usuario_3.ingresos(monto, usuario_3.getSaldo(), usuario_3.getSaldoInicial());
+                                        }
+                                        break;
+                        
+                                    case 2:
+                                        System.out.println("---------MENU RETIROS-------------");
+                                        System.out.println("Que usuario va a realizar la transaccion?");
+                                        System.out.println("1. " + usuario_1.getNombre());
+                                        System.out.println("2. "+ usuario_2.getNombre());
+                                        System.out.println("3. "+ usuario_3.getNombre());
+                                        System.out.println(" ");
+                                        seleccionRetiro = entrada.nextInt();
+                        
+                                        if(seleccionRetiro == 1){
+                                            System.out.println("Cual es el monto a retirar?");
+                                            monto = entrada.nextInt();
+                                            usuario_1.retiros( usuario_1.getSaldoInicial(), monto);
+                                        }
+                        
+                                        if(seleccionRetiro == 2){
+                                            System.out.println("Cual es el monto a retirar?");
+                                            monto = entrada.nextInt();
+                                            usuario_2.retiros( usuario_2.getSaldoInicial(), monto);
+                                        }
+                        
+                                        if(seleccionRetiro == 3){
+                                            System.out.println("Cual es el monto a retirar?");
+                                            monto = entrada.nextInt();
+                                            usuario_3.retiros( usuario_3.getSaldoInicial(), monto);
+                                        }
+                        
+                                        break;
+                        
+                                    case 3:
+                                        System.out.println("---------MENU CONSULTA-------------");
+                                        System.out.println("Que usuario va a consultar?");
+                                        System.out.println("1. " + usuario_1.getNombre());
+                                        System.out.println("2. "+ usuario_2.getNombre());
+                                        System.out.println("3. "+ usuario_3.getNombre());
+                                        System.out.println(" ");
+                                        seleccionConsulta = entrada.nextInt();
+                        
+                                        if(seleccionConsulta == 1){
+                                            usuario_1.consultar(usuario_1.getSaldoInicial());
+                                        }
+                        
+                                        if(seleccionConsulta == 2){
+                                            usuario_2.consultar(usuario_2.getSaldoInicial());
+                                        }
+                        
+                                        if(seleccionConsulta == 3){
+                                            usuario_3.consultar(usuario_3.getSaldoInicial());
+                                        }
+                        
+                                        break;
+                                }
+                                             
+                            }
+                        }
+                      
+               
+            </pre>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
